@@ -28,24 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.glControl1 = new OpenTK.GLControl();
+            this.glControl = new OpenTK.GLControl();
             this.SuspendLayout();
             // 
-            // glControl1
+            // glControl
             // 
-            this.glControl1.BackColor = System.Drawing.Color.Black;
-            this.glControl1.Location = new System.Drawing.Point(0, 54);
-            this.glControl1.Name = "glControl1";
-            this.glControl1.Size = new System.Drawing.Size(1117, 534);
-            this.glControl1.TabIndex = 0;
-            this.glControl1.VSync = false;
+            this.glControl.BackColor = System.Drawing.Color.Black;
+            this.glControl.Location = new System.Drawing.Point(0, 54);
+            this.glControl.Name = "glControl";
+            this.glControl.Size = new System.Drawing.Size(1117, 534);
+            this.glControl.TabIndex = 0;
+            this.glControl.VSync = false;
             // 
             // GameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1116, 583);
-            this.Controls.Add(this.glControl1);
+            this.Controls.Add(this.glControl);
             this.Name = "GameForm";
             this.Text = "GameForm";
             this.ResumeLayout(false);
@@ -54,6 +54,6 @@
 
         #endregion
 
-        private OpenTK.GLControl glControl1;
+        private OpenTK.GLControl glControl;
     }
 }
