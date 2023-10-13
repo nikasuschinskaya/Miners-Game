@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace Miners.Presentation.Views
 {
@@ -15,6 +7,9 @@ namespace Miners.Presentation.Views
         public LauncherForm()
         {
             InitializeComponent();
+            startButton.Click += (sender, e) => OpenGameForm();
         }
+
+        private void OpenGameForm() => new GameForm().Show();
     }
 }

@@ -17,3 +17,11 @@ C:\Users\User\source\repos\Miners-Game\Miners\Miners.Presentation\obj\Debug\Mine
 C:\Users\User\source\repos\Miners-Game\Miners\Miners.Presentation\obj\Debug\Miners.Presentation.csproj.CopyComplete
 C:\Users\User\source\repos\Miners-Game\Miners\Miners.Presentation\obj\Debug\Miners.Presentation.exe
 C:\Users\User\source\repos\Miners-Game\Miners\Miners.Presentation\obj\Debug\Miners.Presentation.pdb
+C:\Users\User\source\repos\Miners-Game\Miners\Miners.Presentation\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\Users\User\source\repos\Miners-Game\Miners\Miners.Presentation\bin\Debug\System.Security.AccessControl.dll
+C:\Users\User\source\repos\Miners-Game\Miners\Miners.Presentation\bin\Debug\System.Security.Permissions.dll
+C:\Users\User\source\repos\Miners-Game\Miners\Miners.Presentation\bin\Debug\System.Security.Principal.Windows.dll
+C:\Users\User\source\repos\Miners-Game\Miners\Miners.Presentation\bin\Debug\System.Configuration.ConfigurationManager.xml
+C:\Users\User\source\repos\Miners-Game\Miners\Miners.Presentation\bin\Debug\System.Security.AccessControl.xml
+C:\Users\User\source\repos\Miners-Game\Miners\Miners.Presentation\bin\Debug\System.Security.Permissions.xml
+C:\Users\User\source\repos\Miners-Game\Miners\Miners.Presentation\bin\Debug\System.Security.Principal.Windows.xml

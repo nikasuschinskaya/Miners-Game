@@ -5,9 +5,9 @@ VisualStudioVersion = 17.3.32825.248
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Miners.Presentation", "Miners.Presentation\Miners.Presentation.csproj", "{71EC008A-77AE-4300-865A-EAF651D65630}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Miners.Data", "Miners.Data\Miners.Data.csproj", "{E681688E-CBD7-4E3F-A75D-596EEA5CFB8B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Miners.Server", "Miners.Data\Miners.Server.csproj", "{E681688E-CBD7-4E3F-A75D-596EEA5CFB8B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Miners.Application", "Miners.Application\Miners.Application.csproj", "{EC9B1998-AB63-4F8F-8BDC-026053687C29}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Miners.Engine", "Miners.Application\Miners.Engine.csproj", "{EC9B1998-AB63-4F8F-8BDC-026053687C29}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

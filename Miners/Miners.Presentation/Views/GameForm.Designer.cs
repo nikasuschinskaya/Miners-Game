@@ -47,6 +47,7 @@
             this.ClientSize = new System.Drawing.Size(1116, 583);
             this.Controls.Add(this.glControl);
             this.Name = "GameForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GameForm";
             this.ResumeLayout(false);
 
