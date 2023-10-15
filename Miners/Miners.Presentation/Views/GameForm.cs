@@ -1,20 +1,38 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using Miners.Presentation.GameWindows;
+using OpenTK;
+using OpenTK.Graphics.OpenGL;
+using System;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Miners.Presentation.Views
 {
     public partial class GameForm : Form
     {
-        public GameForm()
+        public GameForm() => InitializeComponent();
+
+        protected override void OnLoad(EventArgs e)
         {
-            InitializeComponent();
+            base.OnLoad(e);
+
+            glControl.Resize += (sender, eventArgs) => Resize();
+            glControl.Paint += (sender, eventArgs) => Paint();
+
+        }
+
+        private void Resize()
+        {
+            glControl.MakeCurrent();   
+            GL.Viewport(0, 0, glControl.ClientSize.Width, glControl.ClientSize.Height);
+        }
+
+        private void Paint()
+        {
+            glControl.MakeCurrent();
+            GL.ClearColor(Color.CornflowerBlue);
+            GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
+
+            glControl.SwapBuffers();
         }
     }
 }
