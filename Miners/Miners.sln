@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Miners.Presentation", "Mine
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Miners.Server", "Miners.Data\Miners.Server.csproj", "{E681688E-CBD7-4E3F-A75D-596EEA5CFB8B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Miners.Engine", "Miners.Application\Miners.Engine.csproj", "{EC9B1998-AB63-4F8F-8BDC-026053687C29}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Miners.Engine", "Miners.Engine\Miners.Engine.csproj", "{EC9B1998-AB63-4F8F-8BDC-026053687C29}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

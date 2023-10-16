@@ -1,4 +1,5 @@
 ﻿using Miners.Presentation.Commands;
+using Miners.Presentation.Models;
 using Miners.Presentation.ViewModels.Base;
 using Miners.Presentation.Views;
 using System.Windows.Input;
@@ -7,13 +8,14 @@ namespace Miners.Presentation.ViewModels
 {
     public class LauncherViewModel : BaseViewModel
     {
-        public ICommand StartButtonClick { get; set; }
+        //private User _user;
 
-        public LauncherViewModel()
-        {
-            StartButtonClick = new RelayCommand(OnStartButtonClicked);
-        }
+        //public string UserName { get; set; }
 
-        private void OnStartButtonClicked(object parameter) => new GameForm().Show();
+        //public LauncherViewModel()
+        //{
+        //    _user = new User() { Name = "Nika" };
+        //    UserName = _user.Name;
+        //}
     }
 }

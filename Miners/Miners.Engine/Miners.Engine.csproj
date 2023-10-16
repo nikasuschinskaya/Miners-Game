@@ -7,8 +7,8 @@
     <ProjectGuid>{EC9B1998-AB63-4F8F-8BDC-026053687C29}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Miners.Application</RootNamespace>
-    <AssemblyName>Miners.Application</AssemblyName>
+    <RootNamespace>Miners.Engine</RootNamespace>
+    <AssemblyName>Miners.Engine</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -44,6 +44,7 @@
     </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Net" />
     <Reference Include="System.Security" />
     <Reference Include="System.Security.AccessControl, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -66,7 +67,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Game.cs" />
+    <Compile Include="Objects\Mine.cs" />
+    <Compile Include="Objects\Miner.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Render\Texture2D.cs" />
+    <Compile Include="Render\TextureProcessing.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="OpenTK.dll.config" />

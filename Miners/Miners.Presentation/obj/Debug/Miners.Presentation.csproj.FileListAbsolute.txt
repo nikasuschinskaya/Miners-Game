@@ -25,3 +25,5 @@ C:\Users\User\source\repos\Miners-Game\Miners\Miners.Presentation\bin\Debug\Syst
 C:\Users\User\source\repos\Miners-Game\Miners\Miners.Presentation\bin\Debug\System.Security.AccessControl.xml
 C:\Users\User\source\repos\Miners-Game\Miners\Miners.Presentation\bin\Debug\System.Security.Permissions.xml
 C:\Users\User\source\repos\Miners-Game\Miners\Miners.Presentation\bin\Debug\System.Security.Principal.Windows.xml
+C:\Users\User\source\repos\Miners-Game\Miners\Miners.Presentation\bin\Debug\Miners.Application.dll
+C:\Users\User\source\repos\Miners-Game\Miners\Miners.Presentation\bin\Debug\Miners.Application.pdb

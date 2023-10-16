@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.glControl = new OpenTK.GLControl();
-            this.label1 = new System.Windows.Forms.Label();
+            this.firstNameLabel = new System.Windows.Forms.Label();
             this.groupBox = new System.Windows.Forms.GroupBox();
             this.groupBox.SuspendLayout();
             this.SuspendLayout();
@@ -39,26 +39,26 @@
             this.glControl.BackColor = System.Drawing.Color.Black;
             this.glControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.glControl.Location = new System.Drawing.Point(0, 0);
-            this.glControl.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.glControl.Margin = new System.Windows.Forms.Padding(5);
             this.glControl.Name = "glControl";
             this.glControl.Size = new System.Drawing.Size(1116, 583);
             this.glControl.TabIndex = 0;
             this.glControl.VSync = false;
             // 
-            // label1
+            // firstNameLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(80, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 29);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Miners";
+            this.firstNameLabel.AutoSize = true;
+            this.firstNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.firstNameLabel.Location = new System.Drawing.Point(80, 16);
+            this.firstNameLabel.Name = "firstNameLabel";
+            this.firstNameLabel.Size = new System.Drawing.Size(86, 29);
+            this.firstNameLabel.TabIndex = 1;
+            this.firstNameLabel.Text = "Miners";
             // 
             // groupBox
             // 
             this.groupBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.groupBox.Controls.Add(this.label1);
+            this.groupBox.Controls.Add(this.firstNameLabel);
             this.groupBox.Location = new System.Drawing.Point(0, -1);
             this.groupBox.Name = "groupBox";
             this.groupBox.Size = new System.Drawing.Size(1117, 67);
@@ -85,7 +85,7 @@
         #endregion
 
         private OpenTK.GLControl glControl;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label firstNameLabel;
         private System.Windows.Forms.GroupBox groupBox;
     }
 }
