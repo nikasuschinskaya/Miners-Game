@@ -73,7 +73,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Commands\RelayCommand.cs" />
-    <Compile Include="GameWindows\Game.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -124,6 +123,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Miners.Data\Miners.Server.csproj">
+      <Project>{e681688e-cbd7-4e3f-a75d-596eea5cfb8b}</Project>
+      <Name>Miners.Server</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Miners.Engine\Miners.Engine.csproj">
       <Project>{ec9b1998-ab63-4f8f-8bdc-026053687c29}</Project>
       <Name>Miners.Engine</Name>

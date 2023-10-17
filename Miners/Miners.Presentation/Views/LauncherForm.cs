@@ -16,10 +16,6 @@ namespace Miners.Presentation.Views
             nameTextBox.DataBindings.Add(new Binding("Text", User.Instance, "Name"));
         }
 
-        private void OpenGameForm()
-        {
-            //MessageBox.Show(_gameViewModel.UserName);
-            new GameForm().Show();
-        }
+        private void OpenGameForm() => new GameForm().Show();
     }
 }

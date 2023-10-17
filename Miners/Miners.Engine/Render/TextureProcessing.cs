@@ -12,7 +12,7 @@ namespace Miners.Engine.Render
 
         public static Texture2D LoadTexture(string path)
         {
-            if (!File.Exists("Content/" + path))
+            if (!File.Exists(_texturePath + path))
             {
                 throw new FileNotFoundException($"Файл не найден, проверьте путь {path}");
             }

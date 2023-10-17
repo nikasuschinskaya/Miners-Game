@@ -1,10 +1,7 @@
 ﻿using Miners.Engine;
 using Miners.Presentation.Models;
-using Miners.Presentation.ViewModels;
-using OpenTK;
 using OpenTK.Graphics.OpenGL;
 using System;
-using System.Diagnostics.Tracing;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -18,8 +15,6 @@ namespace Miners.Presentation.Views
         public GameForm()
         {
             InitializeComponent();
-
-        
         }
 
         protected override void OnLoad(EventArgs e)
@@ -35,8 +30,8 @@ namespace Miners.Presentation.Views
             _timer.Interval = 16; // Примерно 60 FPS
             _timer.Tick += (sender, eventArgs) => TimerTick();
             _timer.Start();
-
-            firstNameLabel.DataBindings.Add(new Binding("Text", User.Instance, "Name"));
+            if (User.Instance.Id == 1) firstNameLabel.DataBindings.Add(new Binding("Text", User.Instance, "Name"));
+            else secondNameLabel.DataBindings.Add(new Binding("Text", User.Instance, "Name"));
 
         }
 
@@ -49,18 +44,19 @@ namespace Miners.Presentation.Views
 
         private void Resize()
         {
-            glControl.MakeCurrent();   
+            glControl.MakeCurrent();
             GL.Viewport(0, 0, glControl.ClientSize.Width, glControl.ClientSize.Height);
         }
 
         private void Paint()
         {
             glControl.MakeCurrent();
+
+            GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
             GL.ClearColor(Color.CornflowerBlue);
 
             _game.Render();
 
-            GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
 
             glControl.SwapBuffers();
         }

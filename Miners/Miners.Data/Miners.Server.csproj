@@ -7,8 +7,8 @@
     <ProjectGuid>{E681688E-CBD7-4E3F-A75D-596EEA5CFB8B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Miners.Data</RootNamespace>
-    <AssemblyName>Miners.Data</AssemblyName>
+    <RootNamespace>Miners.Server</RootNamespace>
+    <AssemblyName>Miners.Server</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -44,6 +44,7 @@
     </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Net" />
     <Reference Include="System.Security" />
     <Reference Include="System.Security.AccessControl, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -66,13 +67,29 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LevelReaders\Base\IReader.cs" />
-    <Compile Include="LevelReaders\TXTReader.cs" />
+    <Compile Include="Game.cs" />
+    <Compile Include="Level\LevelLoader.cs" />
+    <Compile Include="Level\Readers\Base\IReader.cs" />
+    <Compile Include="Level\Readers\TXTReader.cs" />
+    <Compile Include="Objects\BlocksFactories\Base\BlockFactory.cs" />
+    <Compile Include="Objects\BlocksFactories\MediumStableBlockFactory.cs" />
+    <Compile Include="Objects\BlocksFactories\SteadyBlockFactory.cs" />
+    <Compile Include="Objects\BlocksFactories\WeakResistantBlockFactory.cs" />
+    <Compile Include="Objects\Blocks\Base\IBlock.cs" />
+    <Compile Include="Enums\BlockType.cs" />
+    <Compile Include="Objects\Blocks\MediumStableBlock.cs" />
+    <Compile Include="Objects\Blocks\SteadyBlock.cs" />
+    <Compile Include="Objects\Blocks\WeakResistantBlock.cs" />
+    <Compile Include="Objects\Mine.cs" />
+    <Compile Include="Objects\Miner.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Render\Texture2D.cs" />
+    <Compile Include="Render\TextureProcessing.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="OpenTK.dll.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

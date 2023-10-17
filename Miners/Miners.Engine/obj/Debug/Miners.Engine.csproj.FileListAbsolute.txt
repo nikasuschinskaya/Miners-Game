@@ -19,8 +19,6 @@ C:\Users\User\source\repos\Miners-Game\Miners\Miners.Application\obj\Debug\Miner
 C:\Users\User\source\repos\Miners-Game\Miners\Miners.Application\obj\Debug\Miners.Engine.csproj.CopyComplete
 C:\Users\User\source\repos\Miners-Game\Miners\Miners.Application\obj\Debug\Miners.Application.dll
 C:\Users\User\source\repos\Miners-Game\Miners\Miners.Application\obj\Debug\Miners.Application.pdb
-C:\Users\User\source\repos\Miners-Game\Miners\Miners.Engine\bin\Debug\Miners.Application.dll
-C:\Users\User\source\repos\Miners-Game\Miners\Miners.Engine\bin\Debug\Miners.Application.pdb
 C:\Users\User\source\repos\Miners-Game\Miners\Miners.Engine\bin\Debug\OpenTK.dll
 C:\Users\User\source\repos\Miners-Game\Miners\Miners.Engine\bin\Debug\OpenTK.GLControl.dll
 C:\Users\User\source\repos\Miners-Game\Miners\Miners.Engine\bin\Debug\System.Configuration.ConfigurationManager.dll
@@ -38,5 +36,7 @@ C:\Users\User\source\repos\Miners-Game\Miners\Miners.Engine\bin\Debug\System.Sec
 C:\Users\User\source\repos\Miners-Game\Miners\Miners.Engine\obj\Debug\Miners.Engine.csproj.AssemblyReference.cache
 C:\Users\User\source\repos\Miners-Game\Miners\Miners.Engine\obj\Debug\Miners.Engine.csproj.CoreCompileInputs.cache
 C:\Users\User\source\repos\Miners-Game\Miners\Miners.Engine\obj\Debug\Miners.Engine.csproj.CopyComplete
-C:\Users\User\source\repos\Miners-Game\Miners\Miners.Engine\obj\Debug\Miners.Application.dll
-C:\Users\User\source\repos\Miners-Game\Miners\Miners.Engine\obj\Debug\Miners.Application.pdb
+C:\Users\User\source\repos\Miners-Game\Miners\Miners.Engine\bin\Debug\Miners.Engine.dll
+C:\Users\User\source\repos\Miners-Game\Miners\Miners.Engine\bin\Debug\Miners.Engine.pdb
+C:\Users\User\source\repos\Miners-Game\Miners\Miners.Engine\obj\Debug\Miners.Engine.dll
+C:\Users\User\source\repos\Miners-Game\Miners\Miners.Engine\obj\Debug\Miners.Engine.pdb

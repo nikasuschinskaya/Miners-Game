@@ -31,6 +31,7 @@
             this.glControl = new OpenTK.GLControl();
             this.firstNameLabel = new System.Windows.Forms.Label();
             this.groupBox = new System.Windows.Forms.GroupBox();
+            this.secondNameLabel = new System.Windows.Forms.Label();
             this.groupBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,7 +50,7 @@
             // 
             this.firstNameLabel.AutoSize = true;
             this.firstNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.firstNameLabel.Location = new System.Drawing.Point(80, 16);
+            this.firstNameLabel.Location = new System.Drawing.Point(73, 16);
             this.firstNameLabel.Name = "firstNameLabel";
             this.firstNameLabel.Size = new System.Drawing.Size(86, 29);
             this.firstNameLabel.TabIndex = 1;
@@ -58,6 +59,7 @@
             // groupBox
             // 
             this.groupBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.groupBox.Controls.Add(this.secondNameLabel);
             this.groupBox.Controls.Add(this.firstNameLabel);
             this.groupBox.Location = new System.Drawing.Point(0, -1);
             this.groupBox.Name = "groupBox";
@@ -65,6 +67,16 @@
             this.groupBox.TabIndex = 2;
             this.groupBox.TabStop = false;
             this.groupBox.Text = "Miners";
+            // 
+            // secondNameLabel
+            // 
+            this.secondNameLabel.AutoSize = true;
+            this.secondNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.secondNameLabel.Location = new System.Drawing.Point(956, 16);
+            this.secondNameLabel.Name = "secondNameLabel";
+            this.secondNameLabel.Size = new System.Drawing.Size(86, 29);
+            this.secondNameLabel.TabIndex = 2;
+            this.secondNameLabel.Text = "Miners";
             // 
             // GameForm
             // 
@@ -87,5 +99,6 @@
         private OpenTK.GLControl glControl;
         private System.Windows.Forms.Label firstNameLabel;
         private System.Windows.Forms.GroupBox groupBox;
+        private System.Windows.Forms.Label secondNameLabel;
     }
 }
