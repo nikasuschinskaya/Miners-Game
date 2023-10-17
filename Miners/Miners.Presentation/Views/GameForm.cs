@@ -1,5 +1,4 @@
-﻿using Miners.Engine;
-using Miners.Presentation.Models;
+﻿using Miners.Presentation.Models;
 using OpenTK.Graphics.OpenGL;
 using System;
 using System.Drawing;
@@ -39,7 +38,7 @@ namespace Miners.Presentation.Views
         {
             _game.Update();
             _game.AddRandomMine();
-            glControl.Invalidate(); // Вызов отрисовки
+            glControl.Invalidate();
         }
 
         private void Resize()
@@ -55,7 +54,7 @@ namespace Miners.Presentation.Views
             GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
             GL.ClearColor(Color.CornflowerBlue);
 
-            _game.Render();
+            _game.Render(glControl.Width, glControl.Height);
 
 
             glControl.SwapBuffers();

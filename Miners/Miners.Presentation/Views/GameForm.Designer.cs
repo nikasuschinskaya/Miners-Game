@@ -38,11 +38,10 @@
             // glControl
             // 
             this.glControl.BackColor = System.Drawing.Color.Black;
-            this.glControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.glControl.Location = new System.Drawing.Point(0, 0);
+            this.glControl.Location = new System.Drawing.Point(0, 65);
             this.glControl.Margin = new System.Windows.Forms.Padding(5);
             this.glControl.Name = "glControl";
-            this.glControl.Size = new System.Drawing.Size(1116, 583);
+            this.glControl.Size = new System.Drawing.Size(1116, 518);
             this.glControl.TabIndex = 0;
             this.glControl.VSync = false;
             // 
