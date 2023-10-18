@@ -12,8 +12,7 @@ namespace Miners.Presentation.Level
     public class LevelLoader
     {
         private readonly string _levelPath = ConfigurationManager.AppSettings["levelPath"].ToString();
-
-        private readonly Dictionary<char, Func<int, int, IBlock>> blockFactories = new Dictionary<char, Func<int, int, IBlock>>
+        private readonly Dictionary<char, Func<int, int, IBlock>> _blockFactories = new Dictionary<char, Func<int, int, IBlock>>
         {
             { '#', (x, y) => new SteadyBlockFactory(x, y).GetBlock() },
             { '1', (x, y) => new MediumStableBlockFactory(x, y).GetBlock() },
@@ -24,8 +23,8 @@ namespace Miners.Presentation.Level
         public IBlock[,] LoadLevel(/*string filePath*/)
         {
             var random = new Random();
-            //var lines = File.ReadAllLines(_levelPath + $"{random.Next(1, 3)}.txt");
-            var lines = File.ReadAllLines(_levelPath + $"test.txt");
+            var lines = File.ReadAllLines(_levelPath + $"{random.Next(1, 3)}.txt");
+            //var lines = File.ReadAllLines(_levelPath + $"test.txt");
             var width = int.Parse(lines[0].Split(' ')[0]);
             var height = int.Parse(lines[0].Split(' ')[1]);
 
@@ -36,8 +35,8 @@ namespace Miners.Presentation.Level
                 var line = lines[y + 1];
                 for (int x = 0; x < width; x++)
                 {
-                    char symbol = line[x];
-                    if (blockFactories.TryGetValue(symbol, out var blockFactory))
+                    var symbol = line[x];
+                    if (_blockFactories.TryGetValue(symbol, out var blockFactory))
                     {
                         level[x, y] = blockFactory(x, y);
                     }

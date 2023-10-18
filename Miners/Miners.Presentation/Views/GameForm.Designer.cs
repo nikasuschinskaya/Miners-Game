@@ -41,7 +41,7 @@
             this.glControl.Location = new System.Drawing.Point(0, 65);
             this.glControl.Margin = new System.Windows.Forms.Padding(5);
             this.glControl.Name = "glControl";
-            this.glControl.Size = new System.Drawing.Size(1116, 518);
+            this.glControl.Size = new System.Drawing.Size(993, 518);
             this.glControl.TabIndex = 0;
             this.glControl.VSync = false;
             // 
@@ -57,12 +57,12 @@
             // 
             // groupBox
             // 
-            this.groupBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.groupBox.BackColor = System.Drawing.Color.LimeGreen;
             this.groupBox.Controls.Add(this.secondNameLabel);
             this.groupBox.Controls.Add(this.firstNameLabel);
             this.groupBox.Location = new System.Drawing.Point(0, -1);
             this.groupBox.Name = "groupBox";
-            this.groupBox.Size = new System.Drawing.Size(1117, 67);
+            this.groupBox.Size = new System.Drawing.Size(993, 67);
             this.groupBox.TabIndex = 2;
             this.groupBox.TabStop = false;
             this.groupBox.Text = "Miners";
@@ -71,7 +71,7 @@
             // 
             this.secondNameLabel.AutoSize = true;
             this.secondNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.secondNameLabel.Location = new System.Drawing.Point(956, 16);
+            this.secondNameLabel.Location = new System.Drawing.Point(847, 16);
             this.secondNameLabel.Name = "secondNameLabel";
             this.secondNameLabel.Size = new System.Drawing.Size(86, 29);
             this.secondNameLabel.TabIndex = 2;
@@ -81,7 +81,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1116, 583);
+            this.ClientSize = new System.Drawing.Size(991, 583);
             this.Controls.Add(this.groupBox);
             this.Controls.Add(this.glControl);
             this.Name = "GameForm";

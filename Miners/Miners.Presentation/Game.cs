@@ -1,6 +1,7 @@
 ﻿using Miners.Presentation.Level;
 using Miners.Presentation.Objects;
 using Miners.Presentation.Objects.Blocks.Base;
+using Miners.Presentation.Render;
 using OpenTK;
 using OpenTK.Graphics.OpenGL;
 using System;
@@ -16,12 +17,13 @@ namespace Miners.Presentation
         //private Random _random;
         private IBlock[,] _level;
 
+
         public Game()
         {
             //_player = new Miner { X = 100, Y = 100 };
             //_mines = new List<Mine>();
             //_random = new Random();
-            var levelLoader = new LevelLoader();
+            var levelLoader = new LevelLoader();    
             _level = levelLoader.LoadLevel();
         }
 
@@ -40,66 +42,111 @@ namespace Miners.Presentation
             //_mines.Add(mine);
         }
 
-        public void Render(int screenWidth, int screenHeight)
+        public void Render()
         {
             if (_level != null)
             {
                 int width = _level.GetLength(0);
                 int height = _level.GetLength(1);
 
-                GL.MatrixMode(MatrixMode.Projection);
-                GL.LoadIdentity();
-                GL.Ortho(0, screenWidth, screenHeight, 0, -1, 1);
-
-                for (int x = 0; x < width; x++)
+                for (var x = 0; x < width; x++)
                 {
-                    for (int y = 0; y < height; y++)
+                    for (var y = 0; y < height; y++)
                     {
-                        IBlock block = _level[x, y];
-                        if (block != null)
+                        var block = _level[x, y];
+                        if (block != null && block.Sprite != null)
                         {
-                            DrawBlock(block);
+                            var transform = new Transform(new Vector2(x * 32f, y * 32f),
+                                                          new Vector2(block.Sprite.Width * 2, block.Sprite.Height * 2));
+                            TextureRenderer.Draw(block.Sprite, transform);
                         }
                     }
                 }
             }
         }
 
-        private void DrawBlock(IBlock block)
-        {
-            if (block.Sprite == null) return;
 
-            GL.Enable(EnableCap.Texture2D);
-            GL.BindTexture(TextureTarget.Texture2D, block.Sprite.Id);
+        //public void Render()
+        //{
+        //    if (_level == null)
+        //    {
+        //        int width = _level.GetLength(0);
+        //        int height = _level.GetLength(1);
 
-            GL.Begin(PrimitiveType.Quads);
+        //        for (var x = 0; x < width; x++)
+        //        {
+        //            for (var y = 0; y < height; y++)
+        //            {
+        //                var block = _level[x, y];
+        //                if (block != null && block.Sprite != null)
+        //                {
+        //                    var position = new Vector2(x * 32f, y * 32f); // Позиция блока
+        //                    var transform = new Transform(position, new Vector2(block.Sprite.Width * 2, block.Sprite.Height * 2)); // Трансформация
+        //                    TextureRenderer.Draw(block.Sprite, transform);
+        //                }
 
-            float xOffset = 32f;
-            float yOffset = 32f;
+        //            }
+        //        }
+        //    }
+        //}
 
-            // Меняем позицию блока с учетом смещения относительно предыдущего блока
-            float x = block.Position.X * xOffset;
-            float y = block.Position.Y * yOffset;
 
-            // Увеличиваем размер спрайта в 2 раза
-            float width = block.Sprite.Width * 2;
-            float height = block.Sprite.Height * 2;
+        //public void Render()
+        //{
+        //    if (_level != null)
+        //    {
+        //        int width = _level.GetLength(0);
+        //        int height = _level.GetLength(1);
 
-            GL.TexCoord2(0f, 0f);
-            GL.Vertex2(x, y);
+        //        for (var x = 0; x < width; x++)
+        //        {
+        //            for (var y = 0; y < height; y++)
+        //            {
+        //                IBlock block = _level[x, y];
+        //                if (block != null)
+        //                {
+        //                    DrawBlock(block);
+        //                }
+        //            }
+        //        }
+        //    }
+        //}
 
-            GL.TexCoord2(1f, 0f);
-            GL.Vertex2(x + width, y);
+        //private void DrawBlock(IBlock block)
+        //{
+        //    if (block.Sprite == null) return;
 
-            GL.TexCoord2(1f, 1f);
-            GL.Vertex2(x + width, y + height);
+        //    GL.Enable(EnableCap.Texture2D);
+        //    GL.BindTexture(TextureTarget.Texture2D, block.Sprite.Id);
 
-            GL.TexCoord2(0f, 1f);
-            GL.Vertex2(x, y + height);
+        //    GL.Begin(PrimitiveType.Quads);
 
-            GL.End();
+        //    float xOffset = 32f;
+        //    float yOffset = 32f;
 
-            GL.Disable(EnableCap.Texture2D);
-        }
+        //    // Меняем позицию блока с учетом смещения относительно предыдущего блока
+        //    float x = block.Position.X * xOffset;
+        //    float y = block.Position.Y * yOffset;
+
+        //    // Увеличиваем размер спрайта в 2 раза
+        //    float width = block.Sprite.Width * 2;
+        //    float height = block.Sprite.Height * 2;
+
+        //    GL.TexCoord2(0f, 0f);
+        //    GL.Vertex2(x, y);
+
+        //    GL.TexCoord2(1f, 0f);
+        //    GL.Vertex2(x + width, y);
+
+        //    GL.TexCoord2(1f, 1f);
+        //    GL.Vertex2(x + width, y + height);
+
+        //    GL.TexCoord2(0f, 1f);
+        //    GL.Vertex2(x, y + height);
+
+        //    GL.End();
+
+        //    GL.Disable(EnableCap.Texture2D);
+        //}
     }
 }

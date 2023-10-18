@@ -1,8 +1,10 @@
 ﻿using Miners.Presentation.Models;
+using Miners.Presentation.Render;
 using OpenTK.Graphics.OpenGL;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
+using Autofac;
 
 namespace Miners.Presentation.Views
 {
@@ -14,6 +16,11 @@ namespace Miners.Presentation.Views
         public GameForm()
         {
             InitializeComponent();
+            //using (var scope = Program.Container.BeginLifetimeScope())
+            //{
+            //    //_logger = scope.Resolve<ILogger<MainViewModel>>();
+            //    _game = scope.ResolveOptional<Game>();
+            //}
         }
 
         protected override void OnLoad(EventArgs e)
@@ -51,10 +58,8 @@ namespace Miners.Presentation.Views
         {
             glControl.MakeCurrent();
 
-            GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
-            GL.ClearColor(Color.CornflowerBlue);
-
-            _game.Render(glControl.Width, glControl.Height);
+            TextureRenderer.Begin(glControl.Width, glControl.Height);
+            _game.Render();
 
 
             glControl.SwapBuffers();

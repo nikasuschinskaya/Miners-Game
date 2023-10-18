@@ -17,12 +17,12 @@ namespace Miners.Presentation.Render
                 throw new FileNotFoundException($"Файл не найден, проверьте путь {path}");
             }
 
-            int id = GL.GenTexture();
+            var id = GL.GenTexture();
             GL.BindTexture(TextureTarget.Texture2D, id);
 
-            Bitmap bmp = new Bitmap(_texturePath + path);
+            var bmp = new Bitmap(_texturePath + path);
 
-            BitmapData data = bmp.LockBits(new Rectangle(0, 0, bmp.Width, bmp.Height),
+            var data = bmp.LockBits(new Rectangle(0, 0, bmp.Width, bmp.Height),
                                            ImageLockMode.ReadOnly,
                                            System.Drawing.Imaging.PixelFormat.Format32bppArgb);
 
