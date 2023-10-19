@@ -1,4 +1,5 @@
-﻿using Miners.Presentation.Objects.Blocks;
+﻿using Miners.Presentation.Objects;
+using Miners.Presentation.Objects.Blocks;
 using Miners.Presentation.Objects.Blocks.Base;
 using Miners.Presentation.Objects.BlocksFactories;
 using OpenTK;
@@ -17,14 +18,14 @@ namespace Miners.Presentation.Level
             { '#', (x, y) => new SteadyBlockFactory(x, y).GetBlock() },
             { '1', (x, y) => new MediumStableBlockFactory(x, y).GetBlock() },
             { '2', (x, y) => new WeakResistantBlockFactory(x, y).GetBlock() },
-            { '.', (x, y) => new EmptyBlockFactory(x, y).GetBlock() }
+            { '.', (x, y) => new EmptyBlockFactory(x, y).GetBlock() },
+            { '*', (x, y) => new MinerFactory(x, y).GetBlock() }
         };
 
-        public IBlock[,] LoadLevel(/*string filePath*/)
+        public IBlock[,] LoadLevel()
         {
             var random = new Random();
             var lines = File.ReadAllLines(_levelPath + $"{random.Next(1, 3)}.txt");
-            //var lines = File.ReadAllLines(_levelPath + $"test.txt");
             var width = int.Parse(lines[0].Split(' ')[0]);
             var height = int.Parse(lines[0].Split(' ')[1]);
 

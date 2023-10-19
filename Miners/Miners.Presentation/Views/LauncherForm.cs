@@ -1,15 +1,17 @@
 ﻿using Miners.Presentation.Models;
+using System;
 using System.Windows.Forms;
 
 namespace Miners.Presentation.Views
 {
     public partial class LauncherForm : Form
     {
-        public LauncherForm()
+        public LauncherForm() => InitializeComponent();
+
+        protected override void OnLoad(EventArgs e)
         {
-            InitializeComponent();
-            startButton.Click += (sender, e) => OpenGameForm();
-            
+            base.OnLoad(e);
+            startButton.Click += (sender, eventArgs) => OpenGameForm();
             nameTextBox.DataBindings.Add(new Binding("Text", User.Instance, "Name"));
         }
 
