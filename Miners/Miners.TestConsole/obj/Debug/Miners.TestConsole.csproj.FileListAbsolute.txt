@@ -1,0 +1,8 @@
+C:\Users\User\source\repos\Miners-Game\Miners\Miners.TestConsole\bin\Debug\Miners.TestConsole.exe.config
+C:\Users\User\source\repos\Miners-Game\Miners\Miners.TestConsole\bin\Debug\Miners.TestConsole.exe
+C:\Users\User\source\repos\Miners-Game\Miners\Miners.TestConsole\bin\Debug\Miners.TestConsole.pdb
+C:\Users\User\source\repos\Miners-Game\Miners\Miners.TestConsole\obj\Debug\Miners.TestConsole.csproj.AssemblyReference.cache
+C:\Users\User\source\repos\Miners-Game\Miners\Miners.TestConsole\obj\Debug\Miners.TestConsole.csproj.SuggestedBindingRedirects.cache
+C:\Users\User\source\repos\Miners-Game\Miners\Miners.TestConsole\obj\Debug\Miners.TestConsole.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\Miners-Game\Miners\Miners.TestConsole\obj\Debug\Miners.TestConsole.exe
+C:\Users\User\source\repos\Miners-Game\Miners\Miners.TestConsole\obj\Debug\Miners.TestConsole.pdb
