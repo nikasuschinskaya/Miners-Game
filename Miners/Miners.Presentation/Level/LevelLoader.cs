@@ -1,7 +1,7 @@
-﻿using Miners.Presentation.Objects;
+﻿using Miners.Presentation.Objects.Base;
 using Miners.Presentation.Objects.Blocks;
-using Miners.Presentation.Objects.Blocks.Base;
 using Miners.Presentation.Objects.BlocksFactories;
+using Miners.Presentation.Objects.Miners;
 using OpenTK;
 using System;
 using System.Collections.Generic;
@@ -13,23 +13,24 @@ namespace Miners.Presentation.Level
     public class LevelLoader
     {
         private readonly string _levelPath = ConfigurationManager.AppSettings["levelPath"].ToString();
-        private readonly Dictionary<char, Func<int, int, IBlock>> _blockFactories = new Dictionary<char, Func<int, int, IBlock>>
+        private readonly Dictionary<char, Func<int, int, IGameObject>> _blockFactories = new Dictionary<char, Func<int, int, IGameObject>>
         {
-            { '#', (x, y) => new SteadyBlockFactory(x, y).GetBlock() },
-            { '1', (x, y) => new MediumStableBlockFactory(x, y).GetBlock() },
-            { '2', (x, y) => new WeakResistantBlockFactory(x, y).GetBlock() },
-            { '.', (x, y) => new EmptyBlockFactory(x, y).GetBlock() },
-            { '*', (x, y) => new MinerFactory(x, y).GetBlock() }
+            { '#', (x, y) => new SteadyBlockFactory(x, y).CreateObject() },
+            { '1', (x, y) => new MediumStableBlockFactory(x, y).CreateObject() },
+            { '2', (x, y) => new WeakResistantBlockFactory(x, y).CreateObject() },
+            { '.', (x, y) => new EmptyBlockFactory(x, y).CreateObject() },
+            { '*', (x, y) => new MinerFactory(x, y).CreateObject() }
         };
 
-        public IBlock[,] LoadLevel()
+        public IGameObject[,] LoadLevel()
         {
             var random = new Random();
+            //var lines = File.ReadAllLines(_levelPath + $"test.txt");
             var lines = File.ReadAllLines(_levelPath + $"{random.Next(1, 3)}.txt");
             var width = int.Parse(lines[0].Split(' ')[0]);
             var height = int.Parse(lines[0].Split(' ')[1]);
 
-            var level = new IBlock[width, height];
+            var level = new IGameObject[width, height];
 
             for (int y = 0; y < height; y++)
             {

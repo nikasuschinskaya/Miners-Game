@@ -26,15 +26,15 @@ namespace Miners.Presentation.Render
                                            ImageLockMode.ReadOnly,
                                            System.Drawing.Imaging.PixelFormat.Format32bppArgb);
 
-            GL.TexImage2D(TextureTarget.Texture2D,
-                          0,
+            GL.TexImage2D(target: TextureTarget.Texture2D,
+                          level: 0,
                           PixelInternalFormat.Rgba,
-                          data.Width,
-                          data.Height,
-                          0,
+                          width: data.Width,
+                          height: data.Height,
+                          border: 0,
                           OpenTK.Graphics.OpenGL.PixelFormat.Bgra,
                           PixelType.UnsignedByte,
-                          data.Scan0);
+                          pixels: data.Scan0);
 
             bmp.UnlockBits(data);
 

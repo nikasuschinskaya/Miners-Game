@@ -1,4 +1,5 @@
-﻿using Miners.Presentation.Objects.Blocks;
+﻿using Miners.Presentation.Objects.Base;
+using Miners.Presentation.Objects.Blocks;
 using Miners.Presentation.Objects.Blocks.Base;
 using Miners.Presentation.Objects.BlocksFactories.Base;
 using Miners.Presentation.Render;
@@ -11,18 +12,13 @@ namespace Miners.Presentation.Objects.BlocksFactories
     {
         private readonly string _texturePath = ConfigurationManager.AppSettings["textureSteadyBlockPath"].ToString();
 
-        private int _x;
-        private int _y;
-
-        public SteadyBlockFactory(int x, int y)
+        public SteadyBlockFactory(int x, int y) : base(x, y)
         {
-            _x = x;
-            _y = y;
         }
 
-        public override IBlock GetBlock()
+        public override IGameObject CreateObject()
         {
-            return new SteadyBlock(new Vector2(_x, _y), TextureProcessing.LoadTexture(_texturePath));
+            return new SteadyBlock(new Vector2(X, Y), TextureProcessing.LoadTexture(_texturePath));
         }
     }
 }

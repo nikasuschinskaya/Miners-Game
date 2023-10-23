@@ -12,10 +12,10 @@ namespace Miners.Presentation
         [STAThread]
         static void Main()
         {
-            Container = ContainerConfig.Configure();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new LauncherForm());
+            Container = ContainerConfig.Configure();
         }
     }
 }

@@ -12,13 +12,13 @@ namespace Miners.Presentation.ContainerDI
         {
             var builder = new ContainerBuilder();
 
+            builder.RegisterType<GameForm>().AsSelf();
             builder.RegisterType<Game>().AsSelf();
             //builder.Register(c => new Game()).SingleInstance();
 
-            //builder.RegisterType<GameForm>().AsSelf();
-            builder.RegisterType<GameForm>()
-                      .WithParameter((pi, c) => pi.ParameterType == typeof(Game),
-                                     (pi, c) => c.Resolve<Game>());
+            //builder.RegisterType<GameForm>()
+            //          .WithParameter((pi, c) => pi.ParameterType == typeof(Game),
+            //                         (pi, c) => c.Resolve<Game>());
 
             //builder.RegisterType<MainViewModel>();
 
