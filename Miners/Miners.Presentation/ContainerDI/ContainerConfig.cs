@@ -1,8 +1,5 @@
 ﻿using Autofac;
-using Miners.Presentation.Level;
 using Miners.Presentation.Views;
-using System;
-using System.Net.Http;
 
 namespace Miners.Presentation.ContainerDI
 {

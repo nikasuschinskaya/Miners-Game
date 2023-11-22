@@ -1,13 +1,9 @@
-﻿using Miners.Presentation.Level;
-using Miners.Presentation.Objects;
-using Miners.Presentation.Objects.Base;
-using Miners.Presentation.Objects.Blocks;
-using Miners.Presentation.Objects.Blocks.Base;
-using Miners.Presentation.Objects.Miners;
-using Miners.Presentation.Render;
+﻿using Miners.Presentation.Render;
+using Miners.Shared.Objects.Base;
+using Miners.Shared.Objects.Blocks;
+using Miners.Shared.Objects.Miners;
 using OpenTK;
 using OpenTK.Input;
-using System;
 using System.Collections.Generic;
 using System.Drawing;
 
@@ -15,38 +11,41 @@ namespace Miners.Presentation
 {
     public class Game
     {
-        private IGameObject[,] _level;
+        public IGameObject[,] Level { get; }
+
+        private List<Miner> _allMiners;
         private Miner _miner;
         private List<RectangleF> _emptyBlocksRectangle;
-        //private Rectangle _emptyBlockRectangle;
         private RectangleF _minerRectangle;
 
-
-        public Game()
+        public Game(IGameObject[,] level, int minerIndex)
         {
-            var levelLoader = new LevelLoader();
-            _level = levelLoader.LoadLevel();
+            Level = level;
+
+            _allMiners = new List<Miner>();
 
             _emptyBlocksRectangle = new List<RectangleF>();
 
-            for (var x = 0; x < _level.GetLength(0); x++)
+            for (var x = 0; x < Level.GetLength(0); x++)
             {
-                for (var y = 0; y < _level.GetLength(1); y++)
+                for (var y = 0; y < Level.GetLength(1); y++)
                 {
-                    if (_level[x, y] is Miner miner)
+                    if (Level[x, y] is Miner miner)
                     {
-                        _miner = miner;
+                        _allMiners.Add(miner);
                         continue;
                     }
-                    else if (_level[x, y] is EmptyBlock)
+                    else if (Level[x, y] is EmptyBlock)
                     {
                         continue;
                     }
 
-                    var emptyBlockRectangle = new RectangleF(_level[x, y].Position.X * 48, _level[x, y].Position.Y * 48, 48, 48);
+                    var emptyBlockRectangle = new RectangleF(Level[x, y].Position.X * 48, Level[x, y].Position.Y * 48, 48, 48);
                     _emptyBlocksRectangle.Add(emptyBlockRectangle);
                 }
             }
+
+            _miner = _allMiners[minerIndex];
         }
 
         public void Update(double time)
@@ -58,10 +57,12 @@ namespace Miners.Presentation
             }
             int k = 3;
 
-            _miner.Move(kb, time/ k);
+            _miner.Move(kb, time / k);
 
-            _minerRectangle = new RectangleF(_miner.Position.X * 48, _miner.Position.Y * 48, _miner.Sprite.Width * 3, _miner.Sprite.Height * 3);
-            
+            Texture2D minerSprite = TextureProcessing.LoadTexture(_miner.Path);
+            _minerRectangle = new RectangleF(_miner.Position.X * 48, _miner.Position.Y * 48, minerSprite.Width * 3, minerSprite.Height * 3);
+            //_minerRectangle = new RectangleF(_miner.Position.X * 48, _miner.Position.Y * 48, _miner.Sprite.Width * 3, _miner.Sprite.Height * 3);
+
             foreach (var emptyBlockRectangle in _emptyBlocksRectangle)
             {
                 if (CheckCollision(_minerRectangle, emptyBlockRectangle))
@@ -75,38 +76,44 @@ namespace Miners.Presentation
                 }
             }
 
-            //_miner.Move(kb, time / k);
 
         }
 
         public void Render(double time)
         {
-
-            if (_level != null)
+            if (Level == null)
             {
-                int width = _level.GetLength(0);
-                int height = _level.GetLength(1);
+                return;
+            }
 
-                for (var x = 0; x < width; x++)
+            int width = Level.GetLength(0);
+            int height = Level.GetLength(1);
+            for (var x = 0; x < width; x++)
+            {
+                for (var y = 0; y < height; y++)
                 {
-                    for (var y = 0; y < height; y++)
+                    var block = Level[x, y];
+                    if (block != null && block.Path != null)
+                    //if (block != null && block.Sprite != null)
                     {
-                        var block = _level[x, y];
-                        if (block != null && block.Sprite != null)
-                        {
-                            float xOffset = 48f;
-                            float yOffset = 48f;
-                            int zoom = 3;
+                        float xOffset = 48f;
+                        float yOffset = 48f;
+                        int zoom = 3;
 
-                            TextureRenderer.Draw(block.Sprite,
-                                                 new Vector2(block.Position.X * xOffset, block.Position.Y * yOffset),
-                                                 new Vector2(block.Sprite.Width * zoom, block.Sprite.Height * zoom));
-                        }
+                        Texture2D sprite = TextureProcessing.LoadTexture(block.Path);
+                        TextureRenderer.Draw(sprite,
+                                             new Vector2(block.Position.X * xOffset, block.Position.Y * yOffset),
+                                             new Vector2(sprite.Width * zoom, sprite.Height * zoom));
+
+
+                        //TextureRenderer.Draw(block.Sprite,
+                        //                     new Vector2(block.Position.X * xOffset, block.Position.Y * yOffset),
+                        //                     new Vector2(block.Sprite.Width * zoom, block.Sprite.Height * zoom));
                     }
                 }
             }
         }
-        private bool CheckCollision(RectangleF firstGameObject, RectangleF secondGameObject) => 
+        private bool CheckCollision(RectangleF firstGameObject, RectangleF secondGameObject) =>
             firstGameObject.IntersectsWith(secondGameObject);
     }
 }
