@@ -1,7 +1,14 @@
 ﻿using Autofac;
+using Miners.Presentation.Converters;
 using Miners.Presentation.Models;
 using Miners.Presentation.Render;
+using Miners.Shared;
+using Miners.Shared.Objects.Base;
+using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
+using System.Net.Sockets;
+using System.Text;
 using System.Windows.Forms;
 
 namespace Miners.Presentation.Views
@@ -23,12 +30,34 @@ namespace Miners.Presentation.Views
 
         protected override void OnLoad(EventArgs e)
         {
-            base.OnLoad(e);
 
+            //var data = ReadDataFromSocket(Program.ClientSocket);
+
+            var response = ReadDataFromSocket(Program.ClientSocket).Split('\n');
+
+            var minerIndex = Convert.ToInt32(response[0]);
+
+            var mapJson = response[1];
+
+            if (!mapJson.StartsWith(nameof(CommandType.MAP)))
+            {
+                return;
+            }
+
+            var spaceIndex = response[1].IndexOf(' ');
+            var settings = new JsonSerializerSettings
+            {
+                Converters = new List<JsonConverter> { new GameObjectConverter() },
+                ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+            };
+
+            var map = response[1].Substring(spaceIndex);
+            var level = JsonConvert.DeserializeObject<IGameObject[,]>(map, settings);
+            _game = new Game(level, minerIndex);
+
+            base.OnLoad(e);
             glControl.VSync = true;
             glControl.Paint += RenderFrame;
-
-            _game = new Game();
 
             _timer = new Timer();
             _timer.Interval = 16; // примерно 60 FPS
@@ -56,6 +85,14 @@ namespace Miners.Presentation.Views
             _game.Render(_timer.Interval / 3000.0);
 
             glControl.SwapBuffers();
+        }
+
+        static string ReadDataFromSocket(Socket socket)
+        {
+            var buffer = new byte[1024 * 64 * 100];
+            int bytesRead = socket.Receive(buffer);
+
+            return Encoding.UTF8.GetString(buffer, 0, bytesRead);
         }
     }
 }

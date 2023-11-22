@@ -6,7 +6,7 @@ namespace Miners.Presentation.Render
 {
     public static class TextureRenderer
     {
-        public static void Draw(Texture2D texture, /*Transform transform*/Vector2 position, Vector2 scale)
+        public static void Draw(Texture2D texture, Vector2 position, Vector2 scale)
         {
             if (texture == null) return;
 
@@ -28,8 +28,6 @@ namespace Miners.Presentation.Render
                 var vertex = vertices[i];
 
                 GL.TexCoord2(vertex);
-                //GL.Vertex2(transform.Position.X + vertex.X * transform.Scale.X,
-                //           transform.Position.Y + vertex.Y * transform.Scale.Y);
                 GL.Vertex2(position.X + vertex.X * scale.X,
                            position.Y + vertex.Y * scale.Y);
             }

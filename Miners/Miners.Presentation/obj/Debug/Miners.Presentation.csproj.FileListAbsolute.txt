@@ -41,3 +41,7 @@ C:\Users\User\source\repos\Miners-Game\Miners\Miners.Presentation\bin\Debug\Syst
 C:\Users\User\source\repos\Miners-Game\Miners\Miners.Presentation\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\User\source\repos\Miners-Game\Miners\Miners.Presentation\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\User\source\repos\Miners-Game\Miners\Miners.Presentation\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\User\source\repos\Miners-Game\Miners\Miners.Presentation\bin\Debug\Newtonsoft.Json.dll
+C:\Users\User\source\repos\Miners-Game\Miners\Miners.Presentation\bin\Debug\Newtonsoft.Json.xml
+C:\Users\User\source\repos\Miners-Game\Miners\Miners.Presentation\bin\Debug\Miners.Shared.dll
+C:\Users\User\source\repos\Miners-Game\Miners\Miners.Presentation\bin\Debug\Miners.Shared.pdb

@@ -1,0 +1,12 @@
+C:\Users\User\source\repos\Miners-Game\Miners\Miners.Shared\bin\Debug\Miners.Shared.dll
+C:\Users\User\source\repos\Miners-Game\Miners\Miners.Shared\bin\Debug\Miners.Shared.pdb
+C:\Users\User\source\repos\Miners-Game\Miners\Miners.Shared\obj\Debug\Miners.Shared.csproj.AssemblyReference.cache
+C:\Users\User\source\repos\Miners-Game\Miners\Miners.Shared\obj\Debug\Miners.Shared.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\Miners-Game\Miners\Miners.Shared\obj\Debug\Miners.Shared.dll
+C:\Users\User\source\repos\Miners-Game\Miners\Miners.Shared\obj\Debug\Miners.Shared.pdb
+C:\Users\User\source\repos\Miners-Game\Miners\Miners.Shared\bin\Debug\Newtonsoft.Json.dll
+C:\Users\User\source\repos\Miners-Game\Miners\Miners.Shared\bin\Debug\Newtonsoft.Json.xml
+C:\Users\User\source\repos\Miners-Game\Miners\Miners.Shared\obj\Debug\Miners.Shared.csproj.CopyComplete
+C:\Users\User\source\repos\Miners-Game\Miners\Miners.Shared\bin\Debug\OpenTK.dll
+C:\Users\User\source\repos\Miners-Game\Miners\Miners.Shared\bin\Debug\OpenTK.pdb
+C:\Users\User\source\repos\Miners-Game\Miners\Miners.Shared\bin\Debug\OpenTK.xml

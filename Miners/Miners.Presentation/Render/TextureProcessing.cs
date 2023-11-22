@@ -23,17 +23,17 @@ namespace Miners.Presentation.Render
             var bmp = new Bitmap(_texturePath + path);
 
             var data = bmp.LockBits(new Rectangle(0, 0, bmp.Width, bmp.Height),
-                                           ImageLockMode.ReadOnly,
-                                           System.Drawing.Imaging.PixelFormat.Format32bppArgb);
+                                    ImageLockMode.ReadOnly,
+                                    System.Drawing.Imaging.PixelFormat.Format32bppArgb);
 
             GL.TexImage2D(target: TextureTarget.Texture2D,
                           level: 0,
-                          PixelInternalFormat.Rgba,
+                          internalformat: PixelInternalFormat.Rgba,
                           width: data.Width,
                           height: data.Height,
                           border: 0,
-                          OpenTK.Graphics.OpenGL.PixelFormat.Bgra,
-                          PixelType.UnsignedByte,
+                          format: OpenTK.Graphics.OpenGL.PixelFormat.Bgra,
+                          type: PixelType.UnsignedByte,
                           pixels: data.Scan0);
 
             bmp.UnlockBits(data);
