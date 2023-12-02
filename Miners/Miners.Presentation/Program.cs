@@ -1,22 +1,19 @@
-﻿using Autofac;
-using Miners.Presentation.ContainerDI;
-using Miners.Presentation.Views;
+﻿using Miners.Presentation.Views;
 using System;
-using System.Net.Sockets;
 using System.Net;
+using System.Net.Sockets;
 using System.Windows.Forms;
-using System.Security.RightsManagement;
 
 namespace Miners.Presentation
 {
     internal static class Program
     {
-
         public static Socket ClientSocket { get; private set; }
 
         [STAThread]
         static void Main()
         {
+            //var host = "192.168.0.119";
             var host = "127.0.0.1";
             var port = 12345;
 

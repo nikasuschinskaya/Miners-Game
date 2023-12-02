@@ -1,6 +1,7 @@
 ﻿using Miners.Shared.Objects.Base;
 using Miners.Shared.Objects.Blocks;
 using Miners.Shared.Objects.Miners;
+using Miners.Shared.Objects.Prizes;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
@@ -15,13 +16,10 @@ namespace Miners.Presentation.Converters
             {
                 var jObject = JObject.Load(reader);
 
-                // Поле "Type" в JSON указывает на конкретный тип объекта
                 if (jObject.TryGetValue("Type", StringComparison.OrdinalIgnoreCase, out var typeToken))
                 {
                     string typeName = typeToken.Value<string>();
 
-                    // Здесь вам нужно предоставить логику создания объекта в зависимости от типа
-                    // Например, если у вас есть классы, реализующие IGameObject с именами BoxObject, PlayerObject и т. д.
                     switch (typeName)
                     {
                         case "EmptyBlock":
@@ -34,6 +32,10 @@ namespace Miners.Presentation.Converters
                             return jObject.ToObject<WeakResistantBlock>();
                         case "Miner":
                             return jObject.ToObject<Miner>();
+                        case "Letup":
+                            return jObject.ToObject<Letup>();
+                        case "Powerup":
+                            return jObject.ToObject<Powerup>();
                         default:
                             throw new NotSupportedException($"Unsupported object type: {typeName}");
                     }

@@ -1,5 +1,4 @@
-﻿using Autofac;
-using Miners.Presentation.Converters;
+﻿using Miners.Presentation.Converters;
 using Miners.Presentation.Models;
 using Miners.Presentation.Render;
 using Miners.Shared;
@@ -22,9 +21,6 @@ namespace Miners.Presentation.Views
 
         protected override void OnLoad(EventArgs e)
         {
-
-            //var data = ReadDataFromSocket(Program.ClientSocket);
-
             var response = ReadDataFromSocket(Program.ClientSocket).Split('\n');
 
             var minerIndex = Convert.ToInt32(response[0]);
@@ -63,7 +59,11 @@ namespace Miners.Presentation.Views
 
         private void UpdateFrame(object sender, EventArgs e)
         {
-            _game.Update(_timer.Interval / 3000.0);
+            //Text = $"Focused: {Focused} Enabled: {Enabled} Active: {ActiveForm == this}";
+            Text = $"{_game.Miner.Position}";
+            if (ActiveForm != this) return;
+
+            _game.Update(_timer.Interval / 1000.0);
 
             glControl.Invalidate();
         }
@@ -74,7 +74,7 @@ namespace Miners.Presentation.Views
 
             TextureRenderer.Begin(glControl.Width, glControl.Height);
 
-            _game.Render(_timer.Interval / 3000.0);
+            _game.Render(/*_timer.Interval / 1000.0*/);
 
             glControl.SwapBuffers();
         }
