@@ -25,8 +25,6 @@ namespace Miners.Server.Level
 
         public IGameObject[,] LoadLevel(int randomLevelNumber)
         {
-            //var random = new Random();
-            //var lines = File.ReadAllLines(_levelPath + $"{random.Next(1, 3)}.txt");
             var lines = File.ReadAllLines(_levelPath + $"{randomLevelNumber}.txt");
             var width = int.Parse(lines[0].Split(' ')[0]);
             var height = int.Parse(lines[0].Split(' ')[1]);

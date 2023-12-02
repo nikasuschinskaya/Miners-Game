@@ -80,6 +80,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommandHandlers\Base\ICommandHandler.cs" />
+    <Compile Include="CommandHandlers\Extensions\CommandHandlerExtensions.cs" />
+    <Compile Include="CommandHandlers\BombCommandHandler.cs" />
+    <Compile Include="CommandHandlers\MoveCommandHandler.cs" />
+    <Compile Include="CommandHandlers\OrCommandHandler.cs" />
+    <Compile Include="Game.cs" />
     <Compile Include="Level\LevelLoader.cs" />
     <Compile Include="ObjectsFactories\Base\GameObjectFactory.cs" />
     <Compile Include="ObjectsFactories\BlocksFactories\Base\BlockFactory.cs" />

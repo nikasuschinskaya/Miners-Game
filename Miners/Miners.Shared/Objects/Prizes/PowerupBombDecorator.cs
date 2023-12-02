@@ -2,7 +2,7 @@
 
 namespace Miners.Shared.Objects.Prizes
 {
-    public class PowerupBombDecorator
+    public class PowerupBombDecorator : IBomb
     {
         private const int Amount = 1;
 
