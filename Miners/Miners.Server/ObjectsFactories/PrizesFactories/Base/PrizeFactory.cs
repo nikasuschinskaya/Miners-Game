@@ -12,10 +12,5 @@ namespace Miners.Server.ObjectsFactories.PrizesFactories.Base
             X = x;
             Y = y;
         }
-
-        //public override IGameObject CreateObject()
-        //{
-        //    return new Prize(new Vector2(X, Y), null);
-        //}
     }
 }

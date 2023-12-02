@@ -18,7 +18,6 @@ C:\Users\User\source\repos\Miners-Game\Miners\Miners.Server\bin\Debug\System.Num
 C:\Users\User\source\repos\Miners-Game\Miners\Miners.Server\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\User\source\repos\Miners-Game\Miners\Miners.Server\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\User\source\repos\Miners-Game\Miners\Miners.Server\obj\Debug\Miners.Server.csproj.AssemblyReference.cache
-C:\Users\User\source\repos\Miners-Game\Miners\Miners.Server\obj\Debug\Miners.Server.csproj.SuggestedBindingRedirects.cache
 C:\Users\User\source\repos\Miners-Game\Miners\Miners.Server\obj\Debug\Miners.Server.csproj.CoreCompileInputs.cache
 C:\Users\User\source\repos\Miners-Game\Miners\Miners.Server\obj\Debug\Miners.Server.csproj.CopyComplete
 C:\Users\User\source\repos\Miners-Game\Miners\Miners.Server\obj\Debug\Miners.Server.exe

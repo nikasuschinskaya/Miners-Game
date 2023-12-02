@@ -2,6 +2,7 @@
 using Miners.Shared.Objects.Base;
 using Miners.Shared.Objects.Blocks;
 using Miners.Shared.Objects.Miners;
+using Miners.Shared.Objects.Mines;
 using OpenTK;
 using OpenTK.Input;
 using System.Collections.Generic;
@@ -11,12 +12,13 @@ namespace Miners.Presentation
 {
     public class Game
     {
-        public IGameObject[,] Level { get; }
-
-        private List<Miner> _allMiners;
-        private Miner _miner;
-        private List<RectangleF> _emptyBlocksRectangle;
+        private readonly List<Miner> _allMiners;
+        private readonly Miner _miner;
+        //private readonly List<Mine> _mines;
+        private readonly List<RectangleF> _emptyBlocksRectangle;
         private RectangleF _minerRectangle;
+
+        public IGameObject[,] Level { get; }
 
         public Game(IGameObject[,] level, int minerIndex)
         {
@@ -46,6 +48,7 @@ namespace Miners.Presentation
             }
 
             _miner = _allMiners[minerIndex];
+            //_mines = new List<Mine>();
         }
 
         public void Update(double time)
@@ -75,7 +78,12 @@ namespace Miners.Presentation
                     //return;
                 }
             }
-
+            //if (kb.IsKeyDown(Key.Space))
+            //{
+            //    // Установка мины в текущей позиции минера
+            //    PlaceMine(_miner.Position);
+            //}
+            
 
         }
 
@@ -94,7 +102,6 @@ namespace Miners.Presentation
                 {
                     var block = Level[x, y];
                     if (block != null && block.Path != null)
-                    //if (block != null && block.Sprite != null)
                     {
                         float xOffset = 48f;
                         float yOffset = 48f;
@@ -104,15 +111,28 @@ namespace Miners.Presentation
                         TextureRenderer.Draw(sprite,
                                              new Vector2(block.Position.X * xOffset, block.Position.Y * yOffset),
                                              new Vector2(sprite.Width * zoom, sprite.Height * zoom));
-
-
-                        //TextureRenderer.Draw(block.Sprite,
-                        //                     new Vector2(block.Position.X * xOffset, block.Position.Y * yOffset),
-                        //                     new Vector2(block.Sprite.Width * zoom, block.Sprite.Height * zoom));
                     }
                 }
             }
+
+            //// Отрисовка мин
+            //foreach (var mine in _mines)
+            //{
+            //    Texture2D mineSprite = TextureProcessing.LoadTexture(mine.Path);
+            //    //RectangleF mineRectangle = new RectangleF(mine.Position.X * 48, mine.Position.Y * 48, mineSprite.Width * 3, mineSprite.Height * 3);
+
+            //    TextureRenderer.Draw(mineSprite, new Vector2(mine.Position.X * 48, mine.Position.Y * 48), new Vector2(mineSprite.Width * 3, mineSprite.Height * 3));
+            //}
         }
+
+        //private void PlaceMine(Vector2 position)
+        //{
+        //    // Создание новой мины
+        //    Mine mine = new Mine(position, "Mine/bomb.png");
+        //    // Добавление мины в список
+        //    _mines.Add(mine);
+        //}
+
         private bool CheckCollision(RectangleF firstGameObject, RectangleF secondGameObject) =>
             firstGameObject.IntersectsWith(secondGameObject);
     }

@@ -47,6 +47,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Objects\Bombs\Bomb.cs" />
+    <Compile Include="Objects\Bombs\IBomb.cs" />
     <Compile Include="Command.cs" />
     <Compile Include="Objects\Base\GameObject.cs" />
     <Compile Include="Objects\Base\IGameObject.cs" />
@@ -58,7 +60,9 @@
     <Compile Include="Objects\Miners\Miner.cs" />
     <Compile Include="Objects\Prizes\Base\Prize.cs" />
     <Compile Include="Objects\Prizes\Letup.cs" />
+    <Compile Include="Objects\Prizes\LetupBombDecorator.cs" />
     <Compile Include="Objects\Prizes\Powerup.cs" />
+    <Compile Include="Objects\Prizes\PowerupBombDecorator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

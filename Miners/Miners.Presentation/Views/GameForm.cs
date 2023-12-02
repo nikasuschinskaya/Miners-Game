@@ -18,15 +18,7 @@ namespace Miners.Presentation.Views
         private Game _game;
         private Timer _timer;
 
-        public GameForm()
-        {
-            InitializeComponent();
-
-            //using (var scope = Program.Container.BeginLifetimeScope())
-            //{
-            //    _game = scope.Resolve<Game>();
-            //}
-        }
+        public GameForm() => InitializeComponent();
 
         protected override void OnLoad(EventArgs e)
         {

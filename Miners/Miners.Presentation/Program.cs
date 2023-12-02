@@ -11,7 +11,6 @@ namespace Miners.Presentation
 {
     internal static class Program
     {
-        //public static IContainer Container { get; private set; }
 
         public static Socket ClientSocket { get; private set; }
 
@@ -39,7 +38,6 @@ namespace Miners.Presentation
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new LauncherForm());
-            //Container = ContainerConfig.Configure();
         }
     }
 }

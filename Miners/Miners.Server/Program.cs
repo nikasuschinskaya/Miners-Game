@@ -1,5 +1,6 @@
 ﻿using Miners.Server.Level;
 using Miners.Shared;
+using Miners.Shared.Objects.Base;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,7 @@ namespace Miners.Server
         private const int _CLIENTCOUNT = 2;
 
         private static List<Socket> _clients = new List<Socket>();
+        private static int _randomLevelNumber;
 
         static void Main(string[] args)
         {
@@ -31,6 +33,9 @@ namespace Miners.Server
                 serverSocket.Listen(10);
 
                 Console.WriteLine("Server is running");
+
+                var random = new Random();
+                _randomLevelNumber = random.Next(1, 3);
 
                 while (_clients.Count < _CLIENTCOUNT)
                 {
@@ -82,13 +87,12 @@ namespace Miners.Server
                 Console.WriteLine($"Наш любимый игрок: {request.Substring(spaceIndex)}");
             }
 
-            //Handle request
             var response = nameof(CommandType.OK);
 
             userSocket.Send(Encoding.UTF8.GetBytes(response));
 
             LevelLoader levelLoader = new LevelLoader();
-            var map = levelLoader.LoadLevel();
+            var map = levelLoader.LoadLevel(_randomLevelNumber);
 
             JsonSerializerSettings settings = new JsonSerializerSettings
             {
@@ -107,7 +111,6 @@ namespace Miners.Server
                 request = ReadDataFromSocket(userSocket);
                 Console.WriteLine(request);
 
-                //Handle request
                 response = nameof(CommandType.OK);
 
                 userSocket.Send(Encoding.UTF8.GetBytes(response));
@@ -116,7 +119,7 @@ namespace Miners.Server
 
         static string ReadDataFromSocket(Socket socket)
         {
-            var buffer = new byte[1024 * 16];
+            var buffer = new byte[/*1024 * 16*/ 1024 * 64 * 100];
             int bytesRead = socket.Receive(buffer);
 
             return Encoding.UTF8.GetString(buffer, 0, bytesRead);
