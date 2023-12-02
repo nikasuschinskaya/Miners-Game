@@ -8,7 +8,6 @@ C:\Users\User\source\repos\Miners-Game\Miners\Miners.Presentation\bin\Debug\Open
 C:\Users\User\source\repos\Miners-Game\Miners\Miners.Presentation\bin\Debug\OpenTK.GLControl.pdb
 C:\Users\User\source\repos\Miners-Game\Miners\Miners.Presentation\bin\Debug\OpenTK.GLControl.xml
 C:\Users\User\source\repos\Miners-Game\Miners\Miners.Presentation\obj\Debug\Miners.Presentation.csproj.AssemblyReference.cache
-C:\Users\User\source\repos\Miners-Game\Miners\Miners.Presentation\obj\Debug\Miners.Presentation.csproj.SuggestedBindingRedirects.cache
 C:\Users\User\source\repos\Miners-Game\Miners\Miners.Presentation\obj\Debug\Miners.Presentation.Properties.Resources.resources
 C:\Users\User\source\repos\Miners-Game\Miners\Miners.Presentation\obj\Debug\Miners.Presentation.Views.GameForm.resources
 C:\Users\User\source\repos\Miners-Game\Miners\Miners.Presentation\obj\Debug\Miners.Presentation.Views.LauncherForm.resources

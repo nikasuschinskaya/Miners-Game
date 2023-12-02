@@ -23,10 +23,9 @@ namespace Miners.Server.Level
             { '*', (x, y) => new MinerFactory(x, y).CreateObject() }
         };
 
-        public IGameObject[,] LoadLevel()
+        public IGameObject[,] LoadLevel(int randomLevelNumber)
         {
-            var random = new Random();
-            var lines = File.ReadAllLines(_levelPath + $"{random.Next(1, 3)}.txt");
+            var lines = File.ReadAllLines(_levelPath + $"{randomLevelNumber}.txt");
             var width = int.Parse(lines[0].Split(' ')[0]);
             var height = int.Parse(lines[0].Split(' ')[1]);
 
