@@ -1,5 +1,6 @@
 ﻿using Miners.Shared.Objects.Base;
 using Miners.Shared.Objects.Blocks;
+using Miners.Shared.Objects.Bombs;
 using Miners.Shared.Objects.Miners;
 using Miners.Shared.Objects.Prizes;
 using Newtonsoft.Json;
@@ -36,6 +37,8 @@ namespace Miners.Presentation.Converters
                             return jObject.ToObject<Letup>();
                         case "Powerup":
                             return jObject.ToObject<Powerup>();
+                        case "Bomb":
+                            return jObject.ToObject<Bomb>();
                         default:
                             throw new NotSupportedException($"Unsupported object type: {typeName}");
                     }

@@ -14,9 +14,7 @@ namespace Miners.Server.ObjectsFactories.BlocksFactories
         {
         }
 
-        public override IGameObject CreateObject()
-        {
-            return new MediumStableBlock(new Vector2(X, Y), _texturePath);
-        }
+        public override IGameObject CreateObject() => 
+            new MediumStableBlock(new Vector2(X, Y), _texturePath);
     }
 }

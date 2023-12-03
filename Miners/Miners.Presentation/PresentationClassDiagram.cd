@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Miners.Presentation.Converters.GameObjectConverter" Collapsed="true">
+    <Position X="1" Y="1.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Converters\GameObjectConverter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Miners.Presentation.Models.User" Collapsed="true">
+    <Position X="6" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAQAAAAAAIAAQAAAAAAAAAA=</HashCode>
+      <FileName>Models\User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Miners.Presentation.Render.Texture2D" Collapsed="true">
+    <Position X="1" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAABACAAAAAAABAAEAAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Render\Texture2D.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Miners.Presentation.Render.TextureProcessing" Collapsed="true">
+    <Position X="1" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>Render\TextureProcessing.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Miners.Presentation.Render.TextureRenderer" Collapsed="true">
+    <Position X="1" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Render\TextureRenderer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Miners.Presentation.Views.GameForm" Collapsed="true">
+    <Position X="3.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABBASAgAAACAECAAAACAAAAAAAAACAIAAAAAAQ=</HashCode>
+      <FileName>Views\GameForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Miners.Presentation.Views.LauncherForm" Collapsed="true">
+    <Position X="3.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAABAAgACAAAACAAAAAAAAAAAAACJAAAA=</HashCode>
+      <FileName>Views\LauncherForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Miners.Presentation.Game" Collapsed="true">
+    <Position X="6" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>iEQBAAAAAEAgBAIAAAgAAAAAIAAAAAABABAAAAAAACA=</HashCode>
+      <FileName>Game.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Miners.Presentation.Program" Collapsed="true">
+    <Position X="6" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABBAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="8.83" />
+</ClassDiagram>

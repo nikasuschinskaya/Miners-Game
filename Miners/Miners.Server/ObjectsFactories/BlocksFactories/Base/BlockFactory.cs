@@ -12,10 +12,5 @@ namespace Miners.Server.ObjectsFactories.BlocksFactories.Base
             X = x;
             Y = y;
         }
-
-        //public override IGameObject CreateObject()
-        //{
-        //    return new Block(new Vector2(X, Y), null);
-        //}
     }
 }

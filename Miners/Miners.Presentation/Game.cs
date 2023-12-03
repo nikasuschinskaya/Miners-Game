@@ -186,8 +186,7 @@ namespace Miners.Presentation
                                     var removed = _notEmptyBlocksRectangles.RemoveAll(
                                         b => weakResistantBlock.Position.X * 48 == b.X &&
                                              weakResistantBlock.Position.Y * 48 == b.Y);
-                                    //Level[x, y] = new EmptyBlock(weakResistantBlock.Position, null);
-                                    Level[x, y] = null;
+                                    Level[x, y] = new EmptyBlock(weakResistantBlock.Position, null);
                                     continue;
                                 }
                             }
@@ -223,6 +222,8 @@ namespace Miners.Presentation
                     };
                     var newPosition = (Prize)JsonConvert.DeserializeObject<IGameObject>(dataString, settings);
                     _allBonuses.Add(newPosition);
+
+                    continue;
                 }
 
                 if (responseFromServer.StartsWith(nameof(CommandType.YOU_GOT_BONUS)))
@@ -232,18 +233,18 @@ namespace Miners.Presentation
                         .Where(b => b.Position == bonusPosition)
                         .ToList();
 
-                    foreach (var bonus in bonusesToApply)
-                    {
-                        if (bonus is Letup letup)
-                        {
-                            continue;
-                        }
+                    //foreach (var bonus in bonusesToApply)
+                    //{
+                    //    if (bonus is Letup letup)
+                    //    {
+                    //        continue;
+                    //    }
 
-                        if (bonus is Powerup powerup)
-                        {
-                            continue;
-                        }
-                    }
+                    //    if (bonus is Powerup powerup)
+                    //    {
+                    //        continue;
+                    //    }
+                    //}
 
                     foreach (var bonusToDelete in bonusesToApply)
                     {
@@ -252,6 +253,8 @@ namespace Miners.Presentation
                             _allBonuses.Remove(bonusToDelete);
                         }
                     }
+
+                    continue;
                 }
 
                 if (responseFromServer.StartsWith(nameof(CommandType.ENEMY_GOT_BONUS)))
@@ -261,6 +264,8 @@ namespace Miners.Presentation
                     {
                         _allBonuses.RemoveAll(b => b.Position == bonusPosition);
                     }
+
+                    continue;
                 }
             }
         }
@@ -271,43 +276,87 @@ namespace Miners.Presentation
             {
                 return;
             }
-
             int width = Level.GetLength(0);
-            int height = Level.GetLength(1);
+            int height = Level.GetLength(1); 
             float xOffset = 48f;
-            float yOffset = 48f;
+            float yOffset = 48f; 
             int zoom = 3;
-            foreach (var bomb in _bombs)
+
+            for (int i = 0; i < _bombs.Count; i++)
             {
-                Texture2D sprite = TextureProcessing.LoadTexture(bomb.Path);
-                TextureRenderer.Draw(sprite,
-                    new Vector2(bomb.Position.X * xOffset, bomb.Position.Y * yOffset),
-                    new Vector2(sprite.Width * zoom, sprite.Height * zoom));
+                var bomb = _bombs[i]; 
+                RenderGameObject(xOffset, yOffset, zoom, bomb);
             }
-            lock (this)
+            for (int i = 0; i < _allBonuses.Count; i++)
             {
-                foreach (var bonus in _allBonuses)
-                {
-                    Texture2D sprite = TextureProcessing.LoadTexture(bonus.Path);
-                    TextureRenderer.Draw(sprite,
-                        new Vector2(bonus.Position.X * xOffset, bonus.Position.Y * yOffset),
-                        new Vector2(sprite.Width * zoom, sprite.Height * zoom));
-                }
+                var bonus = _allBonuses[i];
+                RenderGameObject(xOffset, yOffset, zoom, bonus);
             }
             for (var x = 0; x < width; x++)
             {
                 for (var y = 0; y < height; y++)
                 {
-                    var block = Level[x, y];
+                    var block = Level[x, y]; 
                     if (block != null && block.Path != null)
                     {
-                        Texture2D sprite = TextureProcessing.LoadTexture(block.Path);
-                        TextureRenderer.Draw(sprite,
-                            new Vector2(block.Position.X * xOffset, block.Position.Y * yOffset),
-                            new Vector2(sprite.Width * zoom, sprite.Height * zoom));
+                        RenderGameObject(xOffset, yOffset, zoom, block);
                     }
                 }
             }
         }
+
+        private static void RenderGameObject(float xOffset, float yOffset, int zoom, IGameObject gameObject)
+        {           
+            Texture2D sprite = TextureProcessing.LoadTexture(gameObject.Path);
+            TextureRenderer.Draw(sprite, 
+                                 new Vector2(gameObject.Position.X * xOffset, gameObject.Position.Y * yOffset),
+                                 new Vector2(sprite.Width * zoom, sprite.Height * zoom));
+        }
+
+
+        //public void Render(/*double time*/)
+        //{
+        //    if (Level == null)
+        //    {
+        //        return;
+        //    }
+
+        //    int width = Level.GetLength(0);
+        //    int height = Level.GetLength(1);
+        //    float xOffset = 48f;
+        //    float yOffset = 48f;
+        //    int zoom = 3;
+        //    foreach (var bomb in _bombs)
+        //    {
+        //        Texture2D sprite = TextureProcessing.LoadTexture(bomb.Path);
+        //        TextureRenderer.Draw(sprite,
+        //            new Vector2(bomb.Position.X * xOffset, bomb.Position.Y * yOffset),
+        //            new Vector2(sprite.Width * zoom, sprite.Height * zoom));
+        //    }
+        //    lock (this)
+        //    {
+        //        foreach (var bonus in _allBonuses)
+        //        {
+        //            Texture2D sprite = TextureProcessing.LoadTexture(bonus.Path);
+        //            TextureRenderer.Draw(sprite,
+        //                new Vector2(bonus.Position.X * xOffset, bonus.Position.Y * yOffset),
+        //                new Vector2(sprite.Width * zoom, sprite.Height * zoom));
+        //        }
+        //    }
+        //    for (var x = 0; x < width; x++)
+        //    {
+        //        for (var y = 0; y < height; y++)
+        //        {
+        //            var block = Level[x, y];
+        //            if (block != null && block.Path != null)
+        //            {
+        //                Texture2D sprite = TextureProcessing.LoadTexture(block.Path);
+        //                TextureRenderer.Draw(sprite,
+        //                    new Vector2(block.Position.X * xOffset, block.Position.Y * yOffset),
+        //                    new Vector2(sprite.Width * zoom, sprite.Height * zoom));
+        //            }
+        //        }
+        //    }
+        //}
     }
 }

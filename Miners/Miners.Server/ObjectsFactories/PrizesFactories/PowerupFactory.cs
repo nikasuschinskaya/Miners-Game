@@ -13,9 +13,7 @@ namespace Miners.Server.ObjectsFactories.PrizesFactories
         {
         }
 
-        public override IGameObject CreateObject()
-        {
-            return new Powerup(new Vector2(X, Y), _texturePath);
-        }
+        public override IGameObject CreateObject() => 
+            new Powerup(new Vector2(X, Y), _texturePath);
     }
 }

@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommandType.cs" />
     <Compile Include="Objects\Bombs\Bomb.cs" />
     <Compile Include="Objects\Bombs\IBomb.cs" />
     <Compile Include="Command.cs" />
@@ -68,6 +69,7 @@
   <ItemGroup>
     <None Include="OpenTK.dll.config" />
     <None Include="packages.config" />
+    <None Include="SharedClassDiagram.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
