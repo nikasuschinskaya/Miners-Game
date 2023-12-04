@@ -1,5 +1,5 @@
 ﻿using Miners.Server.ObjectsFactories.BlocksFactories;
-using Miners.Server.ObjectsFactories.Miners;
+using Miners.Server.ObjectsFactories.MinersFactories;
 using Miners.Shared.Objects.Base;
 using Miners.Shared.Objects.Blocks;
 using OpenTK;

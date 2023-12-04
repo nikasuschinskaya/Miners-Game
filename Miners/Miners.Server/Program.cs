@@ -27,8 +27,8 @@ namespace Miners.Server
 
         static void Main(string[] args)
         {
-            var host = "192.168.0.119";
-            //var host = "127.0.0.1";
+            //var host = "192.168.0.119";
+            var host = "127.0.0.1";
             var port = 12345;
             Socket serverSocket = null;
 

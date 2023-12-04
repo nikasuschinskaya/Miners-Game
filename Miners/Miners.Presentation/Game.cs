@@ -5,7 +5,6 @@ using Miners.Shared.Objects.Base;
 using Miners.Shared.Objects.Blocks;
 using Miners.Shared.Objects.Bombs;
 using Miners.Shared.Objects.Miners;
-using Miners.Shared.Objects.Prizes;
 using Miners.Shared.Objects.Prizes.Base;
 using Newtonsoft.Json;
 using OpenTK;
@@ -277,14 +276,14 @@ namespace Miners.Presentation
                 return;
             }
             int width = Level.GetLength(0);
-            int height = Level.GetLength(1); 
+            int height = Level.GetLength(1);
             float xOffset = 48f;
-            float yOffset = 48f; 
+            float yOffset = 48f;
             int zoom = 3;
 
             for (int i = 0; i < _bombs.Count; i++)
             {
-                var bomb = _bombs[i]; 
+                var bomb = _bombs[i];
                 RenderGameObject(xOffset, yOffset, zoom, bomb);
             }
             for (int i = 0; i < _allBonuses.Count; i++)
@@ -296,7 +295,7 @@ namespace Miners.Presentation
             {
                 for (var y = 0; y < height; y++)
                 {
-                    var block = Level[x, y]; 
+                    var block = Level[x, y];
                     if (block != null && block.Path != null)
                     {
                         RenderGameObject(xOffset, yOffset, zoom, block);
@@ -306,9 +305,9 @@ namespace Miners.Presentation
         }
 
         private static void RenderGameObject(float xOffset, float yOffset, int zoom, IGameObject gameObject)
-        {           
+        {
             Texture2D sprite = TextureProcessing.LoadTexture(gameObject.Path);
-            TextureRenderer.Draw(sprite, 
+            TextureRenderer.Draw(sprite,
                                  new Vector2(gameObject.Position.X * xOffset, gameObject.Position.Y * yOffset),
                                  new Vector2(sprite.Width * zoom, sprite.Height * zoom));
         }
