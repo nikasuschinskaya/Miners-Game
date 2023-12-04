@@ -11,9 +11,7 @@ namespace Miners.Server.ObjectsFactories.BlocksFactories
         {
         }
 
-        public override IGameObject CreateObject()
-        {
-            return new EmptyBlock(new Vector2(X, Y), null);
-        }
+        public override IGameObject CreateObject() => 
+            new EmptyBlock(new Vector2(X, Y), null);
     }
 }

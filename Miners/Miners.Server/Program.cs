@@ -90,6 +90,12 @@ namespace Miners.Server
             {
                 Thread.Sleep(15_000);
 
+                if(Game.Instance.AllPrizes.Count >= 8)
+                {
+                    Thread.Sleep(5_000);
+                    continue;
+                }  
+
                 var freeSpaceToSpawn = Game.Instance.GetFreeCells().ToArray();
 
                 var randomPosition = freeSpaceToSpawn[new Random().Next(freeSpaceToSpawn.Length)];

@@ -13,9 +13,7 @@ namespace Miners.Server.ObjectsFactories.PrizesFactories
         {
         }
 
-        public override IGameObject CreateObject()
-        {
-            return new Letup(new Vector2(X, Y), _texturePath);
-        }
+        public override IGameObject CreateObject() => 
+            new Letup(new Vector2(X, Y), _texturePath);
     }
 }

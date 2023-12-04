@@ -59,7 +59,6 @@ namespace Miners.Presentation.Views
 
         private void UpdateFrame(object sender, EventArgs e)
         {
-            //Text = $"Focused: {Focused} Enabled: {Enabled} Active: {ActiveForm == this}";
             Text = $"{_game.Miner.Position}";
             if (ActiveForm != this) return;
 

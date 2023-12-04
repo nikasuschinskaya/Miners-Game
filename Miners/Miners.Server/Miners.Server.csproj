@@ -93,7 +93,8 @@
     <Compile Include="ObjectsFactories\BlocksFactories\MediumStableBlockFactory.cs" />
     <Compile Include="ObjectsFactories\BlocksFactories\SteadyBlockFactory.cs" />
     <Compile Include="ObjectsFactories\BlocksFactories\WeakResistantBlockFactory.cs" />
-    <Compile Include="ObjectsFactories\Miners\MinerFactory.cs" />
+    <Compile Include="ObjectsFactories\BombFactories\BombFactory.cs" />
+    <Compile Include="ObjectsFactories\MinersFactories\MinerFactory.cs" />
     <Compile Include="ObjectsFactories\PrizesFactories\Base\PrizeFactory.cs" />
     <Compile Include="ObjectsFactories\PrizesFactories\LetupFactory.cs" />
     <Compile Include="ObjectsFactories\PrizesFactories\PowerupFactory.cs" />
@@ -104,6 +105,7 @@
     <None Include="App.config" />
     <None Include="OpenTK.dll.config" />
     <None Include="packages.config" />
+    <None Include="ServerClassDiagram.cd" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Miners.Shared\Miners.Shared.csproj">
