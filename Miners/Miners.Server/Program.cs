@@ -170,6 +170,12 @@ namespace Miners.Server
             while (true)
             {
                 request = ReadDataFromSocket(userSocket);
+                var index = request.IndexOf(" ");
+                var positionString = request.Substring(index);
+                if (((CommandType[])Enum.GetValues(typeof(CommandType))).Any(cmd => positionString.Contains(cmd.ToString())))
+                {
+                    continue;
+                }
                 Debug.WriteLine(request);
                 commandHandler.Handle(request);
             }
