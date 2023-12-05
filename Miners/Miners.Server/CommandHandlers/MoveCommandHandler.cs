@@ -33,6 +33,11 @@ namespace Miners.Server.CommandHandlers
 
             var index = request.IndexOf(" ");
             var positionString = request.Substring(index);
+            if (positionString.Contains(nameof(CommandType.MOVE)))
+            {
+                return true;
+            }
+
             RectangleF newPosition = JsonConvert.DeserializeObject<RectangleF>(positionString);
 
             var result = Game.Instance.SetNewMinerPosition(newPosition, _minerIndex);

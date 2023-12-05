@@ -36,3 +36,11 @@ C:\Users\User\source\repos\Miners-Game\Miners\MinersTests\obj\Debug\MinersTests.
 C:\Users\User\source\repos\Miners-Game\Miners\MinersTests\obj\Debug\MinersTests.csproj.CopyComplete
 C:\Users\User\source\repos\Miners-Game\Miners\MinersTests\obj\Debug\MinersTests.dll
 C:\Users\User\source\repos\Miners-Game\Miners\MinersTests\obj\Debug\MinersTests.pdb
+C:\Users\User\source\repos\Miners-Game\Miners\MinersTests\bin\Debug\Castle.Core.dll
+C:\Users\User\source\repos\Miners-Game\Miners\MinersTests\bin\Debug\Moq.dll
+C:\Users\User\source\repos\Miners-Game\Miners\MinersTests\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\User\source\repos\Miners-Game\Miners\MinersTests\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\User\source\repos\Miners-Game\Miners\MinersTests\bin\Debug\Castle.Core.xml
+C:\Users\User\source\repos\Miners-Game\Miners\MinersTests\bin\Debug\Moq.xml
+C:\Users\User\source\repos\Miners-Game\Miners\MinersTests\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\User\source\repos\Miners-Game\Miners\MinersTests\bin\Debug\System.Threading.Tasks.Extensions.xml

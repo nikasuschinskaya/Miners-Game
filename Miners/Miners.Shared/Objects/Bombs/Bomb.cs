@@ -27,8 +27,8 @@ namespace Miners.Shared.Objects.Bombs
             Damage = damage;
         }
 
-        // Json needed
-        private Bomb() : base(default, null) { }
+        // Json needed and tests needed
+        public Bomb() : base(default, null) { }
 
         public Bomb DeepCopy()
         {
