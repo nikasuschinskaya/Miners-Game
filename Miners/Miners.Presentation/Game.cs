@@ -16,6 +16,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Miners.Presentation
@@ -65,7 +66,8 @@ namespace Miners.Presentation
             _otherMiner = _allMiners[minerIndex == 0 ? 1 : 0];
             _minerSprite = TextureProcessing.LoadTexture(_miner.Path);
 
-            ThreadPool.QueueUserWorkItem(new WaitCallback(ListenServerSocket));
+            Task.Run(() => ListenServerSocket(null));
+            //ThreadPool.QueueUserWorkItem(new WaitCallback(ListenServerSocket));
         }
 
         public void Update(double time)
@@ -75,7 +77,7 @@ namespace Miners.Presentation
             {
                 return;
             }
-            int k = 1;
+            int k = 20;
 
             var position = _miner.GetNextPosition(kb, time / k, out bool sameAsPrevious);
             if (!sameAsPrevious)
@@ -304,10 +306,17 @@ namespace Miners.Presentation
             }
         }
 
-        private static void RenderGameObject(float xOffset, float yOffset, int zoom, IGameObject gameObject)
+        Dictionary<string, Texture2D> _sprites = new Dictionary<string, Texture2D>();
+
+        private void RenderGameObject(float xOffset, float yOffset, int zoom, IGameObject gameObject)
         {
-            Texture2D sprite = TextureProcessing.LoadTexture(gameObject.Path);
-            TextureRenderer.Draw(sprite,
+            if (!_sprites.TryGetValue(gameObject.Path, out var sprite))
+            {
+                sprite = TextureProcessing.LoadTexture(gameObject.Path);
+                _sprites.Add(gameObject.Path, sprite);
+            }
+
+            TextureRenderer.Draw(sprite, 
                                  new Vector2(gameObject.Position.X * xOffset, gameObject.Position.Y * yOffset),
                                  new Vector2(sprite.Width * zoom, sprite.Height * zoom));
         }

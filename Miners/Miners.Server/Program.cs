@@ -9,11 +9,13 @@ using Miners.Shared.Objects.Prizes.Base;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace Miners.Server
 {
@@ -59,12 +61,15 @@ namespace Miners.Server
                 Game.SetGameSettings(map);
 
                 //Listen first user
-                ThreadPool.QueueUserWorkItem(new WaitCallback(ListenUser), 0);
+                Task.Run(() => ListenUser(0));
+                //ThreadPool.QueueUserWorkItem(new WaitCallback(ListenUser), 0);
 
                 //Listen second user
-                ThreadPool.QueueUserWorkItem(new WaitCallback(ListenUser), 1);
+                Task.Run(() => ListenUser(1));
+                //ThreadPool.QueueUserWorkItem(new WaitCallback(ListenUser), 1);
 
-                ThreadPool.QueueUserWorkItem(new WaitCallback(BonusGenerator));
+                Task.Run(() => BonusGenerator(null));
+                //ThreadPool.QueueUserWorkItem(new WaitCallback(BonusGenerator));
 
                 Console.ReadKey();
             }
@@ -165,6 +170,7 @@ namespace Miners.Server
             while (true)
             {
                 request = ReadDataFromSocket(userSocket);
+                Debug.WriteLine(request);
                 commandHandler.Handle(request);
             }
         }

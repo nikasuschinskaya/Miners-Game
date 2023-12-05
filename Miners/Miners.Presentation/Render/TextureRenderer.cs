@@ -8,7 +8,7 @@ namespace Miners.Presentation.Render
     {
         public static void Draw(Texture2D texture, Vector2 position, Vector2 scale)
         {
-            if (texture == null) return;
+            //if (texture == null) return;
 
             GL.Enable(EnableCap.Texture2D);
             GL.BindTexture(TextureTarget.Texture2D, texture.Id);
