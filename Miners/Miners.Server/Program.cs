@@ -29,8 +29,8 @@ namespace Miners.Server
 
         static void Main(string[] args)
         {
-            //var host = "192.168.0.119";
-            var host = "127.0.0.1";
+            var host = "192.168.228.103";
+            //var host = "127.0.0.1";
             var port = 12345;
             Socket serverSocket = null;
 
@@ -60,11 +60,9 @@ namespace Miners.Server
                 var map = levelLoader.LoadLevel(_randomLevelNumber);
                 Game.SetGameSettings(map);
 
-                //Listen first user
                 Task.Run(() => ListenUser(0));
                 //ThreadPool.QueueUserWorkItem(new WaitCallback(ListenUser), 0);
 
-                //Listen second user
                 Task.Run(() => ListenUser(1));
                 //ThreadPool.QueueUserWorkItem(new WaitCallback(ListenUser), 1);
 
@@ -119,7 +117,7 @@ namespace Miners.Server
 
                 foreach (var socket in _clients)
                 {
-                    socket.Send(Encoding.UTF8.GetBytes($"{nameof(CommandType.SPAWN_BONUS)} {json}"));
+                    socket.Send(Encoding.UTF8.GetBytes($"{nameof(CommandType.SPAWN_BONUS)} {json};"));
                 }
             }
         }
@@ -154,7 +152,9 @@ namespace Miners.Server
 
             JsonSerializerSettings settings = new JsonSerializerSettings
             {
-                ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
+                MaxDepth = 1,
+                ContractResolver = new IgnorePropertiesResolver("Length", "LengthFast", "LengthSquared", "PerpendicularRight", "PerpendicularLeft", "Yx")
             };
 
             var jsonMap = JsonConvert.SerializeObject(Game.Instance.Level, settings);
@@ -171,6 +171,10 @@ namespace Miners.Server
             {
                 request = ReadDataFromSocket(userSocket);
                 var index = request.IndexOf(" ");
+                if (index < 0)
+                {
+                    continue;
+                }
                 var positionString = request.Substring(index);
                 if (((CommandType[])Enum.GetValues(typeof(CommandType))).Any(cmd => positionString.Contains(cmd.ToString())))
                 {

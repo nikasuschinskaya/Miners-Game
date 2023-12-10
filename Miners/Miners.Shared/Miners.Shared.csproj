@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CommandType.cs" />
+    <Compile Include="IgnorePropertiesResolver.cs" />
     <Compile Include="Objects\Bombs\Bomb.cs" />
     <Compile Include="Objects\Bombs\IBomb.cs" />
     <Compile Include="Command.cs" />
@@ -59,6 +60,7 @@
     <Compile Include="Objects\Blocks\SteadyBlock.cs" />
     <Compile Include="Objects\Blocks\WeakResistantBlock.cs" />
     <Compile Include="Objects\Miners\Miner.cs" />
+    <Compile Include="Objects\Prizes\Base\BombDecorator.cs" />
     <Compile Include="Objects\Prizes\Base\Prize.cs" />
     <Compile Include="Objects\Prizes\Letup.cs" />
     <Compile Include="Objects\Prizes\LetupBombDecorator.cs" />
@@ -67,6 +69,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="DecoratorClassDiagram.cd" />
     <None Include="OpenTK.dll.config" />
     <None Include="packages.config" />
     <None Include="SharedClassDiagram.cd" />

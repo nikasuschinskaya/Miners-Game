@@ -103,6 +103,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="CommandHandlerClassDiagram.cd" />
+    <None Include="FactoryClassDiagram.cd" />
     <None Include="OpenTK.dll.config" />
     <None Include="packages.config" />
     <None Include="ServerClassDiagram.cd" />

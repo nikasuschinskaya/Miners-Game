@@ -48,20 +48,20 @@ namespace Miners.Presentation.Views
             glControl.Paint += RenderFrame;
 
             _timer = new Timer();
-            _timer.Interval = 16; // примерно 60 FPS
+            _timer.Interval = 16 * 2; // примерно 60 FPS
             _timer.Tick += UpdateFrame;
             _timer.Start();
 
             if (User.Instance.Id == 1) firstNameLabel.DataBindings.Add(new Binding("Text", User.Instance, "Name"));
             else secondNameLabel.DataBindings.Add(new Binding("Text", User.Instance, "Name"));
-
         }
 
         private void UpdateFrame(object sender, EventArgs e)
         {
-            Text = $"{_game.Miner.Position}";
-            if (ActiveForm != this) return;
+            //Text = $"{_game.Miner.Position}";
+            //if (ActiveForm != this) return;
 
+            //Thread.Sleep(10);
             _game.Update(_timer.Interval / 150.0);
 
             glControl.Invalidate();
@@ -73,7 +73,7 @@ namespace Miners.Presentation.Views
 
             TextureRenderer.Begin(glControl.Width, glControl.Height);
 
-            _game.Render(/*_timer.Interval / 1000.0*/);
+            _game.Render();
 
             glControl.SwapBuffers();
         }

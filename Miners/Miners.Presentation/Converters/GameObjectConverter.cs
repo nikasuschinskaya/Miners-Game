@@ -20,6 +20,7 @@ namespace Miners.Presentation.Converters
                 if (jObject.TryGetValue("Type", StringComparison.OrdinalIgnoreCase, out var typeToken))
                 {
                     string typeName = typeToken.Value<string>();
+                    Console.WriteLine($"Десериализация объекта типа: {typeName}");
 
                     switch (typeName)
                     {
@@ -48,7 +49,9 @@ namespace Miners.Presentation.Converters
             }
             catch (JsonReaderException ex)
             {
-                throw new JsonSerializationException("Error deserializing IGameObject", ex);
+                Console.WriteLine($"Ошибка во время десериализации: {ex.Message}");
+                Console.WriteLine($"Данные JSON: {reader.Value}");
+                throw new JsonSerializationException("Ошибка десериализации IGameObject", ex);
             }
         }
 
