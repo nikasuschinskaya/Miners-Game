@@ -149,6 +149,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="UserClassDiagram.cd" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

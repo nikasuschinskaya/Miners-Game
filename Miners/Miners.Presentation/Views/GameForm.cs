@@ -61,7 +61,6 @@ namespace Miners.Presentation.Views
             //Text = $"{_game.Miner.Position}";
             //if (ActiveForm != this) return;
 
-            //Thread.Sleep(10);
             _game.Update(_timer.Interval / 150.0);
 
             glControl.Invalidate();

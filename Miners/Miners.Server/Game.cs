@@ -12,7 +12,6 @@ namespace Miners.Server
 {
     public class Game
     {
-        //private readonly string _texturePath = ConfigurationManager.AppSettings["textureMediumStableBlockPath"].ToString();
         private readonly string _texturePath = ConfigurationManager.AppSettings["textureMine"].ToString();
 
         public static Game Instance { get; private set; }

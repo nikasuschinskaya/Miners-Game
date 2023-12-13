@@ -108,6 +108,13 @@
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
+  <Class Name="Miners.Shared.IgnorePropertiesResolver" Collapsed="true">
+    <Position X="9.5" Y="8.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAABAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IgnorePropertiesResolver.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Interface Name="Miners.Shared.Objects.Base.IGameObject" Collapsed="true">
     <Position X="9.5" Y="4" Width="1.25" />
     <TypeIdentifier>
