@@ -32,91 +32,91 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Miners.Server.Level.LevelLoader" Collapsed="true">
-    <Position X="10.5" Y="2.25" Width="1.5" />
+    <Position X="8.75" Y="2.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAgAAAEAAIAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Level\LevelLoader.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Miners.Server.ObjectsFactories.Base.GameObjectFactory" Collapsed="true">
-    <Position X="7.25" Y="3.5" Width="1.5" />
+    <Position X="6.25" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAA=</HashCode>
       <FileName>ObjectsFactories\Base\GameObjectFactory.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Miners.Server.ObjectsFactories.BlocksFactories.Base.BlockFactory" Collapsed="true">
-    <Position X="5.5" Y="5.25" Width="1.5" />
+    <Position X="4.5" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYAA=</HashCode>
       <FileName>ObjectsFactories\BlocksFactories\Base\BlockFactory.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Miners.Server.ObjectsFactories.BlocksFactories.EmptyBlockFactory" Collapsed="true">
-    <Position X="7.25" Y="7.5" Width="1.75" />
+    <Position X="7.5" Y="6.75" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAA=</HashCode>
       <FileName>ObjectsFactories\BlocksFactories\EmptyBlockFactory.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Miners.Server.ObjectsFactories.BlocksFactories.MediumStableBlockFactory" Collapsed="true">
-    <Position X="9.5" Y="7.5" Width="2.25" />
+    <Position X="9.75" Y="6.75" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAIAAA=</HashCode>
       <FileName>ObjectsFactories\BlocksFactories\MediumStableBlockFactory.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Miners.Server.ObjectsFactories.BlocksFactories.SteadyBlockFactory" Collapsed="true">
-    <Position X="2.25" Y="7.5" Width="1.75" />
+    <Position X="2.5" Y="6.75" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAIAAA=</HashCode>
       <FileName>ObjectsFactories\BlocksFactories\SteadyBlockFactory.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Miners.Server.ObjectsFactories.BlocksFactories.WeakResistantBlockFactory" Collapsed="true">
-    <Position X="4.5" Y="7.5" Width="2.25" />
+    <Position X="4.75" Y="6.75" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAIAAA=</HashCode>
       <FileName>ObjectsFactories\BlocksFactories\WeakResistantBlockFactory.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Miners.Server.ObjectsFactories.MinersFactories.MinerFactory" Collapsed="true">
-    <Position X="8.5" Y="5.25" Width="1.5" />
+    <Position X="6.25" Y="2.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAIAAQAAAAAAAAAAAAAAAAAAgAABAAAAAAIAAA=</HashCode>
       <FileName>ObjectsFactories\MinersFactories\MinerFactory.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Miners.Server.ObjectsFactories.PrizesFactories.Base.PrizeFactory" Collapsed="true">
-    <Position X="12" Y="4.75" Width="1.5" />
+    <Position X="8" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYAA=</HashCode>
       <FileName>ObjectsFactories\PrizesFactories\Base\PrizeFactory.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Miners.Server.ObjectsFactories.PrizesFactories.LetupFactory" Collapsed="true">
-    <Position X="11" Y="6.25" Width="1.5" />
+    <Position X="7" Y="5.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAIAAA=</HashCode>
       <FileName>ObjectsFactories\PrizesFactories\LetupFactory.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Miners.Server.ObjectsFactories.PrizesFactories.PowerupFactory" Collapsed="true">
-    <Position X="13" Y="6.25" Width="1.5" />
+    <Position X="9" Y="5.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAIAAA=</HashCode>
       <FileName>ObjectsFactories\PrizesFactories\PowerupFactory.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Miners.Server.Game" Collapsed="true">
-    <Position X="12.75" Y="2.25" Width="1.5" />
+    <Position X="10.5" Y="2.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>gKAAAAAAAACABAgAACAAAAAAAACEAACBQAAAEAAIAAA=</HashCode>
       <FileName>Game.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Miners.Server.Program" Collapsed="true">
-    <Position X="12.75" Y="3" Width="1.5" />
+    <Position X="10.5" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAkAAAAAAAAAAAAAAAAAAAgAAAAEAIAAAgAIBBAAAAA=</HashCode>
       <FileName>Program.cs</FileName>

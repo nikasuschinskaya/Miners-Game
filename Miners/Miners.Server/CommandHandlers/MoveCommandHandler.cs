@@ -14,11 +14,9 @@ namespace Miners.Server.CommandHandlers
         private readonly Socket _userSocket;
         private readonly Socket _otherSocket;
         private readonly int _minerIndex;
-        //private Game _game;
 
-        public MoveCommandHandler(/*Game game, */Socket userSocket, Socket other, int minerIndex)
+        public MoveCommandHandler(Socket userSocket, Socket other, int minerIndex)
         {
-            //_game = game;
             _userSocket = userSocket;
             _otherSocket = other;
             _minerIndex = minerIndex;
@@ -39,8 +37,8 @@ namespace Miners.Server.CommandHandlers
             var result = Game.Instance.SetNewMinerPosition(newPosition, _minerIndex);
             if (result)
             {
-                _userSocket.Send(Encoding.UTF8.GetBytes($"{nameof(CommandType.MOVE_SELF)} {positionString}"));
-                _otherSocket.Send(Encoding.UTF8.GetBytes($"{nameof(CommandType.MOVE_OTHER)} {positionString}"));
+                _userSocket.Send(Encoding.UTF8.GetBytes($"{nameof(CommandType.MOVE_SELF)} {positionString};"));
+                _otherSocket.Send(Encoding.UTF8.GetBytes($"{nameof(CommandType.MOVE_OTHER)} {positionString};"));
             }
 
             CheckIfUserGotPrize();
@@ -58,7 +56,9 @@ namespace Miners.Server.CommandHandlers
                 {
                     var settings = new JsonSerializerSettings
                     {
-                        ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                        ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
+                        MaxDepth = 1,
+                        ContractResolver = new IgnorePropertiesResolver("Length", "LengthFast", "LengthSquared", "PerpendicularRight", "PerpendicularLeft", "Yx")
                     };
                     var json = JsonConvert.SerializeObject(allPrizes[i].Position, settings);
                     if (allPrizes[i] is Letup)
@@ -69,8 +69,8 @@ namespace Miners.Server.CommandHandlers
                     {
                         Game.Instance.AllBombs[_minerIndex] = new PowerupBombDecorator(Game.Instance.AllBombs[_minerIndex]);
                     }
-                    var myMessage = $"{nameof(CommandType.YOU_GOT_BONUS)} {json}";
-                    var enemyMessage = $"{nameof(CommandType.ENEMY_GOT_BONUS)} {json}";
+                    var myMessage = $"{nameof(CommandType.YOU_GOT_BONUS)} {json};";
+                    var enemyMessage = $"{nameof(CommandType.ENEMY_GOT_BONUS)} {json};";
                     _userSocket.Send(Encoding.UTF8.GetBytes(myMessage));
                     _otherSocket.Send(Encoding.UTF8.GetBytes(enemyMessage));
                     allPrizes.RemoveAt(i);

@@ -17,6 +17,6 @@
         DRAW,
         SPAWN_BONUS,
         YOU_GOT_BONUS,
-        ENEMY_GOT_BONUS
+        ENEMY_GOT_BONUS 
     }
 }

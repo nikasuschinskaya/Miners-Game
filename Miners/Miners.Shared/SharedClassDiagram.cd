@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="Miners.Shared.Objects.Base.GameObject" Collapsed="true">
-    <Position X="8" Y="4" Width="1.5" />
+    <Position X="8" Y="4" Width="1.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAIgAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
       <FileName>Objects\Base\GameObject.cs</FileName>
@@ -9,42 +9,42 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Miners.Shared.Objects.Blocks.Base.Block" Collapsed="true">
-    <Position X="8" Y="7" Width="1.5" />
+    <Position X="8" Y="5.25" Width="1.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Objects\Blocks\Base\Block.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Miners.Shared.Objects.Blocks.EmptyBlock" Collapsed="true">
-    <Position X="11.5" Y="9" Width="1.5" />
+    <Position X="10.25" Y="7.75" Width="1.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
       <FileName>Objects\Blocks\EmptyBlock.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Miners.Shared.Objects.Blocks.MediumStableBlock" Collapsed="true">
-    <Position X="4.75" Y="9" Width="1.75" />
+    <Position X="6.25" Y="7.75" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
       <FileName>Objects\Blocks\MediumStableBlock.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Miners.Shared.Objects.Blocks.SteadyBlock" Collapsed="true">
-    <Position X="7" Y="9" Width="1.5" />
+    <Position X="6" Y="6.5" Width="1.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
       <FileName>Objects\Blocks\SteadyBlock.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Miners.Shared.Objects.Blocks.WeakResistantBlock" Collapsed="true">
-    <Position X="9" Y="9" Width="1.75" />
+    <Position X="8.25" Y="7.75" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
       <FileName>Objects\Blocks\WeakResistantBlock.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Miners.Shared.Objects.Bombs.Bomb" Collapsed="true">
-    <Position X="14.25" Y="5.75" Width="1.5" />
+    <Position X="12.75" Y="5.25" Width="1.25" />
     <TypeIdentifier>
       <HashCode>AAAIQICAAAAAAAAAAAAAAAAACAAIAAAAAQAAAAAAAAA=</HashCode>
       <FileName>Objects\Bombs\Bomb.cs</FileName>
@@ -52,72 +52,85 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Miners.Shared.Objects.Miners.Miner" Collapsed="true">
-    <Position X="5.25" Y="5.75" Width="1.5" />
+    <Position X="6" Y="5.25" Width="1.25" />
     <TypeIdentifier>
       <HashCode>BBABAAAAAIAAAAAAAAAAAAABAAAAAACAAQAAAAAAAAA=</HashCode>
       <FileName>Objects\Miners\Miner.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Miners.Shared.Objects.Prizes.Base.Prize" Collapsed="true">
-    <Position X="11" Y="5.25" Width="1.5" />
+    <Position X="9.75" Y="5.25" Width="1.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Objects\Prizes\Base\Prize.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Miners.Shared.Objects.Prizes.Letup" Collapsed="true">
-    <Position X="12.25" Y="6.75" Width="1.5" />
+    <Position X="10.75" Y="6.25" Width="1.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
       <FileName>Objects\Prizes\Letup.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Miners.Shared.Objects.Prizes.LetupBombDecorator" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="13.75" Y="9" Width="2" />
+    <Position X="12.25" Y="8.5" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAJAACAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Objects\Prizes\LetupBombDecorator.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="Miners.Shared.Objects.Prizes.Powerup" Collapsed="true">
-    <Position X="10" Y="6.75" Width="1.5" />
+    <Position X="9" Y="6.25" Width="1.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
       <FileName>Objects\Prizes\Powerup.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Miners.Shared.Objects.Prizes.PowerupBombDecorator" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="13.75" Y="8" Width="2" />
+    <Position X="12.25" Y="6.25" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAJAACAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Objects\Prizes\PowerupBombDecorator.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="Miners.Shared.Command" Collapsed="true">
-    <Position X="4.75" Y="7" Width="1.5" />
+    <Position X="6" Y="8.75" Width="1.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAgCAAAAAAAAA=</HashCode>
       <FileName>Command.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="Miners.Shared.Objects.Prizes.Base.BombDecorator" Collapsed="true">
+    <Position X="12.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAJAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Objects\Prizes\Base\BombDecorator.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Miners.Shared.IgnorePropertiesResolver" Collapsed="true">
+    <Position X="9.5" Y="8.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAABAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IgnorePropertiesResolver.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Interface Name="Miners.Shared.Objects.Base.IGameObject" Collapsed="true">
-    <Position X="10" Y="4" Width="1.5" />
+    <Position X="9.5" Y="4" Width="1.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAIgAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
       <FileName>Objects\Base\IGameObject.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Miners.Shared.Objects.Bombs.IBomb" Collapsed="true">
-    <Position X="14.25" Y="6.75" Width="1.5" />
+    <Position X="12.75" Y="4" Width="1.25" />
     <TypeIdentifier>
       <HashCode>AAAIAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Objects\Bombs\IBomb.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Enum Name="Miners.Shared.CommandType" Collapsed="true">
-    <Position X="4.75" Y="7.75" Width="1.5" />
+    <Position X="7.5" Y="8.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAFJABgAAAAAAIgCAAAAACAAAAAAAAAAABCAAAAOA=</HashCode>
       <FileName>CommandType.cs</FileName>
