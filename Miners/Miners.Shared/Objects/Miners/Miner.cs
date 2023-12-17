@@ -9,21 +9,33 @@ namespace Miners.Shared.Objects.Miners
     {
         private Vector2 _oldPosition;
 
-        //public int Health { get; protected set; }
+        /// <summary>Gets or sets the speed.</summary>
+        /// <value>The speed.</value>
         public float Speed { get; protected set; }
 
-        public Miner(Vector2 position, string path, float speed) : base(position, path)
-        {
-            //Health = 10;
-            Speed = speed;
-        }
-
+        /// <inheritdoc />
         public override string Type => nameof(Miner);
 
+        /// <summary>Initializes a new instance of the <see cref="Miner" /> class.</summary>
+        /// <param name="position">The position.</param>
+        /// <param name="path">The path.</param>
+        /// <param name="speed">The speed.</param>
+        public Miner(Vector2 position, string path, float speed) : base(position, path) => Speed = speed;
+
+        /// <summary>Sets the old position.</summary>
         public void SetOldPosition() => Position = _oldPosition;
 
+        /// <summary>Sets the new position.</summary>
+        /// <param name="position">The position.</param>
         public void SetNewPosition(Vector2 position) => Position = position;
 
+        /// <summary>Gets the next position.</summary>
+        /// <param name="keyboardState">State of the keyboard.</param>
+        /// <param name="time">The time.</param>
+        /// <param name="sameAsPrevious">if set to <c>true</c> [same as previous].</param>
+        /// <returns>
+        ///   <br />
+        /// </returns>
         public Vector2 GetNextPosition(KeyboardState keyboardState, double time, out bool sameAsPrevious)
         {
             float x = Position.X;
@@ -58,57 +70,6 @@ namespace Miners.Shared.Objects.Miners
             }
 
             return new Vector2(x, y);
-        }
-
-        public void Move(KeyboardState keyboardState, double time)
-        {
-            float x = Position.X;
-            float y = Position.Y;
-
-            foreach (Key key in Enum.GetValues(typeof(Key)))
-            {
-                if (keyboardState.IsKeyDown(key))
-                {
-                    switch (key)
-                    {
-                        case Key.W:
-                            y -= (float)(Speed * time);
-                            break;
-                        case Key.S:
-                            y += (float)(Speed * time);
-                            break;
-                        case Key.A:
-                            x -= (float)(Speed * time);
-                            break;
-                        case Key.D:
-                            x += (float)(Speed * time);
-                            break;
-                        default:
-                            break;
-                    }
-                }
-            }
-
-
-            //if (keyboardState.IsKeyDown(Key.W))
-            //{
-            //    y -= (float)(Speed * time);
-            //}
-            //else if (keyboardState.IsKeyDown(Key.S))
-            //{
-            //    y += (float)(Speed * time);
-            //}
-
-            //if (keyboardState.IsKeyDown(Key.A))
-            //{
-            //    x -= (float)(Speed * time);
-            //}
-            //else if (keyboardState.IsKeyDown(Key.D))
-            //{
-            //    x += (float)(Speed * time);
-            //}
-            _oldPosition = Position;
-            Position = new Vector2(x, y);
         }
     }
 }

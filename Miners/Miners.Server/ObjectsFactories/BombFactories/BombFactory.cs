@@ -10,10 +10,13 @@ namespace Miners.Server.ObjectsFactories.BombFactories
     {
         private readonly string _texturePath = ConfigurationManager.AppSettings["textureMine"].ToString();
 
+        /// <summary>Initializes a new instance of the <see cref="BombFactory" /> class.</summary>
+        /// <param name="x">The x.</param>
+        /// <param name="y">The y.</param>
         public BombFactory(int x, int y) : base(x, y)
         {
         }
-
+        /// <inheritdoc />
         public override IGameObject CreateObject() =>
             new Bomb(new Vector2(X, Y), _texturePath);
     }

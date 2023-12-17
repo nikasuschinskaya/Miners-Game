@@ -6,6 +6,11 @@ namespace Miners.Presentation.Render
 {
     public static class TextureRenderer
     {
+
+        /// <summary>Draws the specified texture.</summary>
+        /// <param name="texture">The texture.</param>
+        /// <param name="position">The position.</param>
+        /// <param name="scale">The scale.</param>
         public static void Draw(Texture2D texture, Vector2 position, Vector2 scale)
         {
             //if (texture == null) return;
@@ -37,6 +42,9 @@ namespace Miners.Presentation.Render
         }
 
 
+        /// <summary>Begins the specified screen width.</summary>
+        /// <param name="screenWidth">Width of the screen.</param>
+        /// <param name="screenHeight">Height of the screen.</param>
         public static void Begin(int screenWidth, int screenHeight)
         {
             GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);

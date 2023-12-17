@@ -1,13 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="Miners.Shared.Objects.Base.GameObject" Collapsed="true">
-    <Position X="8" Y="4" Width="1.25" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAIgAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
-      <FileName>Objects\Base\GameObject.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" />
-  </Class>
   <Class Name="Miners.Shared.Objects.Blocks.Base.Block" Collapsed="true">
     <Position X="8" Y="5.25" Width="1.25" />
     <TypeIdentifier>
@@ -46,7 +38,7 @@
   <Class Name="Miners.Shared.Objects.Bombs.Bomb" Collapsed="true">
     <Position X="12.75" Y="5.25" Width="1.25" />
     <TypeIdentifier>
-      <HashCode>AAAIQICAAAAAAAAAAAAAAAAACAAIAAAAAQAAAAAAAAA=</HashCode>
+      <HashCode>AAAIQICAAAAAAAAAAAAAAAAACAAAAAAAAQAAAAAAAAA=</HashCode>
       <FileName>Objects\Bombs\Bomb.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -54,7 +46,7 @@
   <Class Name="Miners.Shared.Objects.Miners.Miner" Collapsed="true">
     <Position X="6" Y="5.25" Width="1.25" />
     <TypeIdentifier>
-      <HashCode>BBABAAAAAIAAAAAAAAAAAAABAAAAAACAAQAAAAAAAAA=</HashCode>
+      <HashCode>BBABAAAAAAAAAAAAAAAAAAABAAAAAACAAQAAAAAAAAA=</HashCode>
       <FileName>Objects\Miners\Miner.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -114,6 +106,14 @@
       <HashCode>AAAAAAAAAAAAAAAAAAAABAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>IgnorePropertiesResolver.cs</FileName>
     </TypeIdentifier>
+  </Class>
+  <Class Name="Miners.Shared.Objects.Base.GameObject" Collapsed="true">
+    <Position X="8" Y="4" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIgAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Objects\Base\GameObject.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Interface Name="Miners.Shared.Objects.Base.IGameObject" Collapsed="true">
     <Position X="9.5" Y="4" Width="1.25" />

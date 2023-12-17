@@ -8,8 +8,11 @@ namespace Miners.Presentation
 {
     internal static class Program
     {
+        /// <summary>Gets the client socket.</summary>
+        /// <value>The client socket.</value>
         public static Socket ClientSocket { get; private set; }
 
+        /// <summary>Defines the entry point of the application.</summary>
         [STAThread]
         static void Main()
         {

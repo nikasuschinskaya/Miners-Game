@@ -31,9 +31,17 @@ namespace Miners.Presentation
         private RectangleF _minerRectangle;
         private List<Prize> _allBonuses = new List<Prize>();
 
+        /// <summary>Gets the level.</summary>
+        /// <value>The level.</value>
         public IGameObject[,] Level { get; }
+
+        /// <summary>Gets the miner.</summary>
+        /// <value>The miner.</value>
         public Miner Miner => _miner;
 
+        /// <summary>Initializes a new instance of the <see cref="Game" /> class.</summary>
+        /// <param name="level">The level.</param>
+        /// <param name="minerIndex">Index of the miner.</param>
         public Game(IGameObject[,] level, int minerIndex)
         {
             Level = level;
@@ -66,9 +74,11 @@ namespace Miners.Presentation
             _minerSprite = TextureProcessing.LoadTexture(_miner.Path);
 
             Task.Run(() => ListenServerSocket(null));
-            //ThreadPool.QueueUserWorkItem(new WaitCallback(ListenServerSocket));
         }
 
+
+        /// <summary>Updates the specified time.</summary>
+        /// <param name="time">The time.</param>
         public void Update(double time)
         {
             KeyboardState kb = Keyboard.GetState();
@@ -108,6 +118,9 @@ namespace Miners.Presentation
 
         private readonly CommandType[] _commandTypes = ((CommandType[])Enum.GetValues(typeof(CommandType)));
 
+
+        /// <summary>Listens the server socket.</summary>
+        /// <param name="state">The state.</param>
         public void ListenServerSocket(object state)
         {
             while (true)
@@ -262,6 +275,8 @@ namespace Miners.Presentation
             }
         }
 
+
+        /// <summary>Renders this instance.</summary>
         public void Render()
         {
             if (Level == null)

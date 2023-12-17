@@ -10,6 +10,12 @@ namespace Miners.Presentation.Render
     {
         private static readonly string _texturePath = ConfigurationManager.AppSettings["spritesPath"].ToString();
 
+        /// <summary>Loads the texture.</summary>
+        /// <param name="path">The path.</param>
+        /// <returns>
+        ///   <br />
+        /// </returns>
+        /// <exception cref="System.IO.FileNotFoundException">Файл не найден, проверьте путь {path}</exception>
         public static Texture2D LoadTexture(string path)
         {
             if (!File.Exists(_texturePath + path))

@@ -11,6 +11,17 @@ namespace Miners.Presentation.Converters
 {
     public class GameObjectConverter : JsonConverter<IGameObject>
     {
+        /// <summary>Reads the JSON representation of the object.</summary>
+        /// <param name="reader">The <see cref="T:Newtonsoft.Json.JsonReader" /> to read from.</param>
+        /// <param name="objectType">Type of the object.</param>
+        /// <param name="existingValue">The existing value of object being read. If there is no existing value then <c>null</c> will be used.</param>
+        /// <param name="hasExistingValue">The existing value has a value.</param>
+        /// <param name="serializer">The calling serializer.</param>
+        /// <returns>The object value.</returns>
+        /// <exception cref="System.NotSupportedException">Unsupported object type: {typeName}</exception>
+        /// <exception cref="Newtonsoft.Json.JsonSerializationException">Type property not found in JSON
+        /// or
+        /// Ошибка десериализации IGameObject</exception>
         public override IGameObject ReadJson(JsonReader reader, Type objectType, IGameObject existingValue, bool hasExistingValue, JsonSerializer serializer)
         {
             try
@@ -55,6 +66,11 @@ namespace Miners.Presentation.Converters
             }
         }
 
+
+        /// <summary>Writes the JSON representation of the object.</summary>
+        /// <param name="writer">The <see cref="T:Newtonsoft.Json.JsonWriter" /> to write to.</param>
+        /// <param name="value">The value.</param>
+        /// <param name="serializer">The calling serializer.</param>
         public override void WriteJson(JsonWriter writer, IGameObject value, JsonSerializer serializer)
         {
             if (value == null)

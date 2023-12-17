@@ -23,10 +23,11 @@ namespace Miners.Server
     {
         private static readonly object _LOCK = new object();
         private const int _CLIENTCOUNT = 2;
-
         private static List<Socket> _clients = new List<Socket>();
         private static int _randomLevelNumber;
 
+        /// <summary>Defines the entry point of the application.</summary>
+        /// <param name="args">The arguments.</param>
         static void Main(string[] args)
         {
             var host = "192.168.228.103";
@@ -61,13 +62,10 @@ namespace Miners.Server
                 Game.SetGameSettings(map);
 
                 Task.Run(() => ListenUser(0));
-                //ThreadPool.QueueUserWorkItem(new WaitCallback(ListenUser), 0);
 
                 Task.Run(() => ListenUser(1));
-                //ThreadPool.QueueUserWorkItem(new WaitCallback(ListenUser), 1);
 
                 Task.Run(() => BonusGenerator(null));
-                //ThreadPool.QueueUserWorkItem(new WaitCallback(BonusGenerator));
 
                 Console.ReadKey();
             }

@@ -15,6 +15,10 @@ namespace Miners.Server.CommandHandlers
         private readonly Socket _otherSocket;
         private readonly int _minerIndex;
 
+        /// <summary>Initializes a new instance of the <see cref="MoveCommandHandler" /> class.</summary>
+        /// <param name="userSocket">The user socket.</param>
+        /// <param name="other">The other.</param>
+        /// <param name="minerIndex">Index of the miner.</param>
         public MoveCommandHandler(Socket userSocket, Socket other, int minerIndex)
         {
             _userSocket = userSocket;
@@ -22,6 +26,7 @@ namespace Miners.Server.CommandHandlers
             _minerIndex = minerIndex;
         }
 
+        /// <inheritdoc />
         public bool Handle(string request)
         {
             if (string.IsNullOrEmpty(request) || !request.StartsWith(nameof(CommandType.MOVE)))

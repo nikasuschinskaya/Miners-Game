@@ -13,23 +13,33 @@ namespace Miners.Server
     public class Game
     {
         private readonly string _texturePath = ConfigurationManager.AppSettings["textureMine"].ToString();
+        private List<Miner> _allMiners;
+        private List<RectangleF> _notEmptyBlocksRectangles;
 
         public static Game Instance { get; private set; }
-
-        public static void SetGameSettings(IGameObject[,] level)
-        {
-            Instance = new Game(level);
-        }
-
-        private List<Miner> _allMiners;
+        public List<RectangleF> NotEmptyBlocksRectangles => _notEmptyBlocksRectangles;
+        public List<Prize> AllPrizes { get; private set; }
         public List<IBomb> AllBombs { get; private set; }
-        //private Miner _miner;
-        private List<RectangleF> _notEmptyBlocksRectangles;
-        //private RectangleF _minerRectangle;
-
         public IGameObject[,] Level { get; }
+
+
+        /// <summary>Gets the miner.</summary>
+        /// <param name="minerIndex">Index of the miner.</param>
+        /// <returns>
+        ///   <br />
+        /// </returns>
         public Miner GetMiner(int minerIndex) => _allMiners[minerIndex];
+
+        /// <summary>Gets the bomb.</summary>
+        /// <param name="minerIndex">Index of the miner.</param>
+        /// <returns>
+        ///   <br />
+        /// </returns>
         public IBomb GetBomb(int minerIndex) => AllBombs[minerIndex];
+
+        /// <summary>Sets the game settings.</summary>
+        /// <param name="level">The level.</param>
+        public static void SetGameSettings(IGameObject[,] level) => Instance = new Game(level);
 
         private Game(IGameObject[,] level)
         {
@@ -63,14 +73,15 @@ namespace Miners.Server
                     _notEmptyBlocksRectangles.Add(notEmptyBlockRectangle);
                 }
             }
-
-            //_miner = _allMiners[minerIndex];
         }
 
-        public List<RectangleF> NotEmptyBlocksRectangles => _notEmptyBlocksRectangles;
 
-        public List<Prize> AllPrizes { get; private set; }
-
+        /// <summary>Sets the new miner position.</summary>
+        /// <param name="newPosition">The new position.</param>
+        /// <param name="minerIndex">Index of the miner.</param>
+        /// <returns>
+        ///   <br />
+        /// </returns>
         public bool SetNewMinerPosition(RectangleF newPosition, int minerIndex)
         {
             foreach (var emptyBlockRectangle in _notEmptyBlocksRectangles)
@@ -81,7 +92,6 @@ namespace Miners.Server
                 }
             }
 
-            //_minerRectangle = newPosition;
             GetMiner(minerIndex).Position = new Vector2(newPosition.X / 48, newPosition.Y / 48);
 
             return true;

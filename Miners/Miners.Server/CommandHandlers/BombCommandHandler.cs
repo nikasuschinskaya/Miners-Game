@@ -20,6 +20,11 @@ namespace Miners.Server.CommandHandlers
         private readonly int _minerIndex;
         private readonly int _otherMinerIndex;
 
+
+        /// <summary>Initializes a new instance of the <see cref="BombCommandHandler" /> class.</summary>
+        /// <param name="userSocket">The user socket.</param>
+        /// <param name="other">The other.</param>
+        /// <param name="minerIndex">Index of the miner.</param>
         public BombCommandHandler(Socket userSocket, Socket other, int minerIndex)
         {
             _userSocket = userSocket;
@@ -30,6 +35,7 @@ namespace Miners.Server.CommandHandlers
 
         private Bomb _bomb;
 
+        /// <inheritdoc />
         public bool Handle(string request)
         {
             if (string.IsNullOrEmpty(request) || !request.StartsWith(nameof(CommandType.SPAWN_BOMB)))

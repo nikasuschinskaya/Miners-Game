@@ -7,20 +7,15 @@ namespace Miners.Shared.Objects.Prizes
     {
         private const int Amount = 1;
 
+        /// <summary>Initializes a new instance of the <see cref="PowerupBombDecorator" /> class.</summary>
+        /// <param name="bomb">The bomb.</param>
         public PowerupBombDecorator(IBomb bomb) : base(bomb) { }
 
+        /// <inheritdoc />
         public override int Damage
         {
             get => _bomb.Damage + Amount > 3 ? 3 : _bomb.Damage + Amount;
             set => _bomb.Damage = value;
         }
-        //private const int Amount = 1;
-
-        //private readonly IBomb _bomb;
-
-        //public PowerupBombDecorator(IBomb bomb) => _bomb = bomb;
-
-        //public int Radius { get => _bomb.Radius; set => _bomb.Radius = value; }
-        //public int Damage { get => _bomb.Damage + Amount > 3 ? 3 : _bomb.Damage + Amount; set => _bomb.Damage = value; }
     }
 }

@@ -23,6 +23,12 @@ namespace Miners.Server.Level
             { '*', (x, y) => new MinerFactory(x, y).CreateObject() }
         };
 
+
+        /// <summary>Loads the level.</summary>
+        /// <param name="randomLevelNumber">The random level number.</param>
+        /// <returns>
+        /// Matrix of game objects at the level
+        /// </returns>
         public IGameObject[,] LoadLevel(int randomLevelNumber)
         {
             var lines = File.ReadAllLines(_levelPath + $"{randomLevelNumber}.txt");
